@@ -1,0 +1,25 @@
+# API Information
+
+
+main: {
+  kit: {
+    info: {
+      contact: {
+        name: "State of Colorado"
+        url: "https://data.colorado.gov"
+      }
+      description: "Explore a wide range of public datasets and resources from the Colorado Information Marketplace, including information on government revenue and expenditures, transportation, demographics, business, and more. Access charts, maps, datasets, and documents to gain insights into various aspects of life in Colorado. A valuable tool for researchers, businesses, and the general public seeking data-driven insights."
+      servers: [
+        {
+          description: "Colorado Information Marketplace API"
+          url: "https://data.colorado.gov/api"
+        }
+      ]
+      termsOfService: "https://colorado.gov/terms-of-use"
+      title: "Colorado Information Marketplace"
+      version: "1.0.0"
+    }
+  }
+}
+
+}

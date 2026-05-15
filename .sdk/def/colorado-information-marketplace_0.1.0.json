@@ -1,0 +1,225 @@
+{
+  "openapi": "3.0.3",
+  "info": {
+    "title": "Colorado Information Marketplace",
+    "description": "Explore a wide range of public datasets and resources from the Colorado Information Marketplace, including information on government revenue and expenditures, transportation, demographics, business, and more. Access charts, maps, datasets, and documents to gain insights into various aspects of life in Colorado. A valuable tool for researchers, businesses, and the general public seeking data-driven insights.",
+    "version": "1.0.0",
+    "contact": {
+      "name": "State of Colorado",
+      "url": "https://data.colorado.gov"
+    },
+    "termsOfService": "https://colorado.gov/terms-of-use"
+  },
+  "servers": [
+    {
+      "url": "https://data.colorado.gov/api",
+      "description": "Colorado Information Marketplace API"
+    }
+  ],
+  "paths": {
+    "/catalog": {
+      "get": {
+        "summary": "Browse catalog datasets",
+        "description": "Retrieve a list of available datasets from the Colorado Information Marketplace catalog. Returns datasets covering government revenue and expenditures, transportation, demographics, business, and other public data.",
+        "operationId": "getCatalog",
+        "tags": [
+          "Catalog"
+        ],
+        "parameters": [
+          {
+            "name": "category",
+            "in": "query",
+            "description": "Filter datasets by category (e.g., government, transportation, demographics, business)",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "search",
+            "in": "query",
+            "description": "Search term to filter datasets",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "limit",
+            "in": "query",
+            "description": "Maximum number of results to return",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "default": 100,
+              "minimum": 1,
+              "maximum": 1000
+            }
+          },
+          {
+            "name": "offset",
+            "in": "query",
+            "description": "Number of results to skip for pagination",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "default": 0,
+              "minimum": 0
+            }
+          },
+          {
+            "name": "type",
+            "in": "query",
+            "description": "Filter by resource type (chart, map, dataset, document)",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "enum": [
+                "chart",
+                "map",
+                "dataset",
+                "document"
+              ]
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response with catalog data",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "results": {
+                      "type": "array",
+                      "items": {
+                        "$ref": "#/components/schemas/Dataset"
+                      }
+                    },
+                    "count": {
+                      "type": "integer",
+                      "description": "Total number of results"
+                    },
+                    "limit": {
+                      "type": "integer",
+                      "description": "Number of results per page"
+                    },
+                    "offset": {
+                      "type": "integer",
+                      "description": "Current offset for pagination"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad request - invalid parameters",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal server error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "Dataset": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "description": "Unique identifier for the dataset"
+          },
+          "title": {
+            "type": "string",
+            "description": "Title of the dataset"
+          },
+          "description": {
+            "type": "string",
+            "description": "Detailed description of the dataset"
+          },
+          "category": {
+            "type": "string",
+            "description": "Category of the dataset (e.g., government, transportation, demographics, business)"
+          },
+          "type": {
+            "type": "string",
+            "description": "Type of resource",
+            "enum": [
+              "chart",
+              "map",
+              "dataset",
+              "document"
+            ]
+          },
+          "url": {
+            "type": "string",
+            "format": "uri",
+            "description": "URL to access the dataset"
+          },
+          "created_at": {
+            "type": "string",
+            "format": "date-time",
+            "description": "Timestamp when the dataset was created"
+          },
+          "updated_at": {
+            "type": "string",
+            "format": "date-time",
+            "description": "Timestamp when the dataset was last updated"
+          },
+          "tags": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "Tags associated with the dataset"
+          },
+          "publisher": {
+            "type": "string",
+            "description": "Organization or entity that published the dataset"
+          }
+        }
+      },
+      "Error": {
+        "type": "object",
+        "properties": {
+          "error": {
+            "type": "string",
+            "description": "Error message"
+          },
+          "code": {
+            "type": "string",
+            "description": "Error code"
+          },
+          "message": {
+            "type": "string",
+            "description": "Detailed error message"
+          }
+        }
+      }
+    }
+  },
+  "tags": [
+    {
+      "name": "Catalog",
+      "description": "Operations related to browsing and searching the Colorado Information Marketplace catalog"
+    }
+  ]
+}

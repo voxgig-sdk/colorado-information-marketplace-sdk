@@ -1,0 +1,57 @@
+{
+  "existing": {
+    "catalog": {
+      "CATALOG00": {
+        "category": "s64",
+        "created_at": "s65",
+        "description": "s66",
+        "id": "CATALOG00",
+        "publisher": "s68",
+        "tag": [],
+        "title": "s6a",
+        "type": "s6b",
+        "updated_at": "s6c",
+        "url": "s6d"
+      },
+      "CATALOG01": {
+        "category": "sc8",
+        "created_at": "sc9",
+        "description": "sca",
+        "id": "CATALOG01",
+        "publisher": "scc",
+        "tag": [],
+        "title": "sce",
+        "type": "scf",
+        "updated_at": "sd0",
+        "url": "sd1"
+      },
+      "CATALOG02": {
+        "category": "s12c",
+        "created_at": "s12d",
+        "description": "s12e",
+        "id": "CATALOG02",
+        "publisher": "s130",
+        "tag": [],
+        "title": "s132",
+        "type": "s133",
+        "updated_at": "s134",
+        "url": "s135"
+      }
+    }
+  },
+  "new": {
+    "catalog": {
+      "catalog_ref01": {
+        "category": "s190",
+        "created_at": "s191",
+        "description": "s192",
+        "publisher": "s194",
+        "tag": [],
+        "title": "s196",
+        "type": "s197",
+        "updated_at": "s198",
+        "url": "s199"
+      }
+    }
+  }
+}
