@@ -1,7 +1,7 @@
 package feature
 
 import (
-	"github.com/voxgig-sdk/colorado-information-marketplace-sdk/core"
+	"github.com/voxgig-sdk/colorado-information-marketplace-sdk/go/core"
 )
 
 type BaseFeature struct {

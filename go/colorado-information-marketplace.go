@@ -1,10 +1,10 @@
 package voxgigcoloradoinformationmarketplacesdk
 
 import (
-	"github.com/voxgig-sdk/colorado-information-marketplace-sdk/core"
-	"github.com/voxgig-sdk/colorado-information-marketplace-sdk/entity"
-	"github.com/voxgig-sdk/colorado-information-marketplace-sdk/feature"
-	_ "github.com/voxgig-sdk/colorado-information-marketplace-sdk/utility"
+	"github.com/voxgig-sdk/colorado-information-marketplace-sdk/go/core"
+	"github.com/voxgig-sdk/colorado-information-marketplace-sdk/go/entity"
+	"github.com/voxgig-sdk/colorado-information-marketplace-sdk/go/feature"
+	_ "github.com/voxgig-sdk/colorado-information-marketplace-sdk/go/utility"
 )
 
 // Type aliases preserve external API.

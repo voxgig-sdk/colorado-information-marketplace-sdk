@@ -1,6 +1,6 @@
 package utility
 
-import "github.com/voxgig-sdk/colorado-information-marketplace-sdk/core"
+import "github.com/voxgig-sdk/colorado-information-marketplace-sdk/go/core"
 
 func init() {
 	core.UtilityRegistrar = registerAll
