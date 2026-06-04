@@ -86,7 +86,6 @@ function catalog_basic_setup($extra)
         "COLORADOINFORMATIONMARKETPLACE_TEST_CATALOG_ENTID" => $idmap,
         "COLORADOINFORMATIONMARKETPLACE_TEST_LIVE" => "FALSE",
         "COLORADOINFORMATIONMARKETPLACE_TEST_EXPLAIN" => "FALSE",
-        "COLORADOINFORMATIONMARKETPLACE_APIKEY" => "NONE",
     ]);
 
     $idmap_resolved = Helpers::to_map(
@@ -98,7 +97,6 @@ function catalog_basic_setup($extra)
     if ($env["COLORADOINFORMATIONMARKETPLACE_TEST_LIVE"] === "TRUE") {
         $merged_opts = Vs::merge([
             [
-                "apikey" => $env["COLORADOINFORMATIONMARKETPLACE_APIKEY"],
             ],
             $extra ?? [],
         ]);

@@ -92,7 +92,6 @@ def _catalog_basic_setup(extra):
         "COLORADOINFORMATIONMARKETPLACE_TEST_CATALOG_ENTID": idmap,
         "COLORADOINFORMATIONMARKETPLACE_TEST_LIVE": "FALSE",
         "COLORADOINFORMATIONMARKETPLACE_TEST_EXPLAIN": "FALSE",
-        "COLORADOINFORMATIONMARKETPLACE_APIKEY": "NONE",
     })
 
     idmap_resolved = helpers.to_map(
@@ -103,7 +102,6 @@ def _catalog_basic_setup(extra):
     if env.get("COLORADOINFORMATIONMARKETPLACE_TEST_LIVE") == "TRUE":
         merged_opts = vs.merge([
             {
-                "apikey": env.get("COLORADOINFORMATIONMARKETPLACE_APIKEY"),
             },
             extra or {},
         ])

@@ -61,14 +61,12 @@ def _catalog_direct_setup(mockres):
     env = runner.env_override({
         "COLORADOINFORMATIONMARKETPLACE_TEST_CATALOG_ENTID": {},
         "COLORADOINFORMATIONMARKETPLACE_TEST_LIVE": "FALSE",
-        "COLORADOINFORMATIONMARKETPLACE_APIKEY": "NONE",
     })
 
     live = env.get("COLORADOINFORMATIONMARKETPLACE_TEST_LIVE") == "TRUE"
 
     if live:
         merged_opts = {
-            "apikey": env.get("COLORADOINFORMATIONMARKETPLACE_APIKEY"),
         }
         client = ColoradoInformationMarketplaceSDK(merged_opts)
         return {

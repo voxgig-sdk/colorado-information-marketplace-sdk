@@ -15,9 +15,6 @@ def make_config():
         },
         "options": {
             "base": "https://data.colorado.gov/api",
-            "auth": {
-                "prefix": "Bearer",
-            },
             "headers": {
         "content-type": "application/json",
       },

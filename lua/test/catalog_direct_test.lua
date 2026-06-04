@@ -63,14 +63,12 @@ function catalog_direct_setup(mockres)
   local env = runner.env_override({
     ["COLORADOINFORMATIONMARKETPLACE_TEST_CATALOG_ENTID"] = {},
     ["COLORADOINFORMATIONMARKETPLACE_TEST_LIVE"] = "FALSE",
-    ["COLORADOINFORMATIONMARKETPLACE_APIKEY"] = "NONE",
   })
 
   local live = env["COLORADOINFORMATIONMARKETPLACE_TEST_LIVE"] == "TRUE"
 
   if live then
     local merged_opts = {
-      apikey = env["COLORADOINFORMATIONMARKETPLACE_APIKEY"],
     }
     local client = sdk.new(merged_opts)
     return {

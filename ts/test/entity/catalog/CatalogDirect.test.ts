@@ -79,14 +79,12 @@ function directSetup(mockres?: any) {
   const env = envOverride({
     'COLORADOINFORMATIONMARKETPLACE_TEST_CATALOG_ENTID': {},
     'COLORADOINFORMATIONMARKETPLACE_TEST_LIVE': 'FALSE',
-    'COLORADOINFORMATIONMARKETPLACE_APIKEY': 'NONE',
   })
 
   const live = 'TRUE' === env.COLORADOINFORMATIONMARKETPLACE_TEST_LIVE
 
   if (live) {
     const client = new ColoradoInformationMarketplaceSDK({
-      apikey: env.COLORADOINFORMATIONMARKETPLACE_APIKEY,
     })
 
     let idmap: any = env['COLORADOINFORMATIONMARKETPLACE_TEST_CATALOG_ENTID']
