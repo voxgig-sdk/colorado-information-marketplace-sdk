@@ -119,6 +119,7 @@ func catalogBasicSetup(extra map[string]any) *entityTestSetup {
 		"COLORADOINFORMATIONMARKETPLACE_TEST_CATALOG_ENTID": idmap,
 		"COLORADOINFORMATIONMARKETPLACE_TEST_LIVE":      "FALSE",
 		"COLORADOINFORMATIONMARKETPLACE_TEST_EXPLAIN":   "FALSE",
+		"COLORADOINFORMATIONMARKETPLACE_APIKEY":         "NONE",
 	})
 
 	idmapResolved := core.ToMapAny(env["COLORADOINFORMATIONMARKETPLACE_TEST_CATALOG_ENTID"])
@@ -129,6 +130,7 @@ func catalogBasicSetup(extra map[string]any) *entityTestSetup {
 	if env["COLORADOINFORMATIONMARKETPLACE_TEST_LIVE"] == "TRUE" {
 		mergedOpts := vs.Merge([]any{
 			map[string]any{
+				"apikey": env["COLORADOINFORMATIONMARKETPLACE_APIKEY"],
 			},
 			extra,
 		})

@@ -1,6 +1,11 @@
 # ColoradoInformationMarketplace TypeScript SDK
 
-The TypeScript SDK for the ColoradoInformationMarketplace API. Provides a type-safe, entity-oriented interface with full async/await support.
+
+
+The TypeScript SDK for the ColoradoInformationMarketplace API — a type-safe, entity-oriented client with full async/await support.
+
+> Other languages, the CLI, and MCP server live alongside this one — see
+> the [top-level README](../README.md).
 
 
 ## Install
@@ -17,7 +22,9 @@ loading a specific record.
 ```ts
 import { ColoradoInformationMarketplaceSDK } from 'colorado-information-marketplace'
 
-const client = new ColoradoInformationMarketplaceSDK({})
+const client = new ColoradoInformationMarketplaceSDK({
+  apikey: process.env.COLORADO-INFORMATION-MARKETPLACE_APIKEY,
+})
 ```
 
 ### 2. List catalogs
@@ -82,7 +89,7 @@ const result = await client.Planet().load({ id: 'test01' })
 You can also use the instance method:
 
 ```ts
-const client = new ColoradoInformationMarketplaceSDK()
+const client = new ColoradoInformationMarketplaceSDK({ apikey: '...' })
 const testClient = client.tester()
 ```
 
@@ -118,6 +125,7 @@ const logger = {
 }
 
 const client = new ColoradoInformationMarketplaceSDK({
+  apikey: '...',
   extend: [logger],
 })
 ```
@@ -128,6 +136,7 @@ Create a `.env.local` file at the project root:
 
 ```
 COLORADO-INFORMATION-MARKETPLACE_TEST_LIVE=TRUE
+COLORADO-INFORMATION-MARKETPLACE_APIKEY=<your-key>
 ```
 
 Then run:
@@ -145,6 +154,7 @@ cd ts && npm test
 
 ```ts
 new ColoradoInformationMarketplaceSDK(options?: {
+  apikey?: string
   base?: string
   prefix?: string
   suffix?: string
@@ -155,6 +165,7 @@ new ColoradoInformationMarketplaceSDK(options?: {
 
 | Option | Type | Description |
 | --- | --- | --- |
+| `apikey` | `string` | API key for authentication. |
 | `base` | `string` | Base URL of the API server. |
 | `prefix` | `string` | URL path prefix prepended to all requests. |
 | `suffix` | `string` | URL path suffix appended to all requests. |

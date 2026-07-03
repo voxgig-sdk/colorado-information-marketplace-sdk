@@ -113,6 +113,7 @@ function basicSetup(extra?: any) {
     'COLORADO_INFORMATION_MARKETPLACE_TEST_CATALOG_ENTID': idmap,
     'COLORADO_INFORMATION_MARKETPLACE_TEST_LIVE': 'FALSE',
     'COLORADO_INFORMATION_MARKETPLACE_TEST_EXPLAIN': 'FALSE',
+    'COLORADO_INFORMATION_MARKETPLACE_APIKEY': 'NONE',
   })
 
   idmap = env['COLORADO_INFORMATION_MARKETPLACE_TEST_CATALOG_ENTID']
@@ -122,6 +123,7 @@ function basicSetup(extra?: any) {
   if (live) {
     client = new ColoradoInformationMarketplaceSDK(merge([
       {
+        apikey: env.COLORADO_INFORMATION_MARKETPLACE_APIKEY,
       },
       extra
     ]))

@@ -93,12 +93,14 @@ func catalogDirectSetup(mockres any) *catalogDirectSetupResult {
 	env := envOverride(map[string]any{
 		"COLORADOINFORMATIONMARKETPLACE_TEST_CATALOG_ENTID": map[string]any{},
 		"COLORADOINFORMATIONMARKETPLACE_TEST_LIVE":    "FALSE",
+		"COLORADOINFORMATIONMARKETPLACE_APIKEY":       "NONE",
 	})
 
 	live := env["COLORADOINFORMATIONMARKETPLACE_TEST_LIVE"] == "TRUE"
 
 	if live {
 		mergedOpts := map[string]any{
+			"apikey": env["COLORADOINFORMATIONMARKETPLACE_APIKEY"],
 		}
 		client := sdk.NewColoradoInformationMarketplaceSDK(mergedOpts)
 

@@ -18,36 +18,7 @@ main: {
       termsOfService: "https://colorado.gov/terms-of-use"
       title: "Colorado Information Marketplace"
       version: "1.0.0"
-      tagline: "Browse the State of Colorado's open data portal covering business, transportation, demographics, water, energy, health and more"
-      homepage: "https://data.colorado.gov/"
-      docs_url: "https://data.colorado.gov/browse"
-      license_short: "State of Colorado open data; check each dataset's terms of use"
-      license_md: `- Data is published by the State of Colorado as part of its open data programme; see the portal's [Terms of Use](https://data.colorado.gov/) for general conditions.
-- Each dataset may carry its own licence, attribution requirement or refresh schedule, so check the dataset metadata before redistribution.
-- The portal is powered by the Socrata Open Data platform (Tyler Technologies); the Socrata Open Data API (SODA) conventions apply to all \`resource/{id}\` endpoints.`
-      about_md: `The [Colorado Information Marketplace](https://data.colorado.gov/) is the [State of Colorado](https://data.colorado.gov/)'s open data portal, run on the Socrata Open Data platform (Tyler Technologies). It exposes hundreds of state government datasets so the public can query, chart and reuse them.
-
-Datasets are grouped into eleven public categories on the portal:
-
-- Water
-- Business
-- Demographics
-- Transportation
-- Energy
-- Early Childhood
-- Recreation
-- Health
-- Education
-- Public Safety
-- Agriculture
-
-Each dataset is published as a Socrata resource and is reachable as JSON via \`https://data.colorado.gov/resource/{dataset-id}.json\` (for example \`resource/4ykn-tg5h.json\` for Colorado business entities). Standard SODA query parameters such as \`$where\`, \`$select\`, \`$limit\` and \`$offset\` are supported on these resource endpoints.
-
-Access is open and CORS is enabled, so the API can be called directly from browser code; high-volume users are encouraged to register a Socrata application token to lift throttling on shared, anonymous traffic.`
-      entity_desc: {
-        catalog: "The portal's dataset catalog — individual datasets are addressed as Socrata resources at `https://data.colorado.gov/resource/{dataset-id}.json` and span business, transportation, demographics, water, energy, health, education, public safety, agriculture, recreation and early childhood."
-      }
-      auth: false
     }
   }
 }
+

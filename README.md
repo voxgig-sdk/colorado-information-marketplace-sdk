@@ -1,30 +1,8 @@
 # ColoradoInformationMarketplace SDK
 
-Browse the State of Colorado's open data portal covering business, transportation, demographics, water, energy, health and more
+Colorado Information Marketplace client, generated from the OpenAPI spec.
 
 > TypeScript, Python, PHP, Golang, Ruby, Lua SDKs, a CLI, an interactive REPL, and an MCP server for AI agents — all generated from one OpenAPI spec by [@voxgig/sdkgen](https://github.com/voxgig/sdkgen).
-
-## About Colorado Information Marketplace
-
-The [Colorado Information Marketplace](https://data.colorado.gov/) is the [State of Colorado](https://data.colorado.gov/)'s open data portal, run on the Socrata Open Data platform (Tyler Technologies). It exposes hundreds of state government datasets so the public can query, chart and reuse them.
-
-Datasets are grouped into eleven public categories on the portal:
-
-- Water
-- Business
-- Demographics
-- Transportation
-- Energy
-- Early Childhood
-- Recreation
-- Health
-- Education
-- Public Safety
-- Agriculture
-
-Each dataset is published as a Socrata resource and is reachable as JSON via `https://data.colorado.gov/resource/{dataset-id}.json` (for example `resource/4ykn-tg5h.json` for Colorado business entities). Standard SODA query parameters such as `$where`, `$select`, `$limit` and `$offset` are supported on these resource endpoints.
-
-Access is open and CORS is enabled, so the API can be called directly from browser code; high-volume users are encouraged to register a Socrata application token to lift throttling on shared, anonymous traffic.
 
 ## Try it
 
@@ -58,29 +36,31 @@ gem install colorado-information-marketplace-sdk
 luarocks install colorado-information-marketplace-sdk
 ```
 
-## 30-second quickstart
+## Quickstart
 
 ### TypeScript
 
 ```ts
 import { ColoradoInformationMarketplaceSDK } from 'colorado-information-marketplace'
 
-const client = new ColoradoInformationMarketplaceSDK({})
+const client = new ColoradoInformationMarketplaceSDK({
+  apikey: process.env.COLORADO-INFORMATION-MARKETPLACE_APIKEY,
+})
 
 // List all catalogs
 const catalogs = await client.Catalog().list()
+console.log(catalogs.data)
 ```
 
-See the [TypeScript README](ts/README.md) for the
-full guide, or scroll down for the same example in other languages.
+See the [TypeScript README](ts/README.md) for the full guide.
 
-## What's in the box
+## Surfaces
 
-| Surface | Use it for | Path |
-| --- | --- | --- |
-| **SDK** (TypeScript, Python, PHP, Golang, Ruby, Lua) | App integration | `ts/` `py/` `php/` `go/` `rb/` `lua/` |
-| **CLI** | Scripts, CI, ops, one-off API calls | `go-cli/` |
-| **MCP server** | AI agents (Claude, Cursor, Cline) | `go-mcp/` |
+| Surface | Path |
+| --- | --- |
+| **SDK** (TypeScript, Python, PHP, Golang, Ruby, Lua) | `ts/` `py/` `php/` `go/` `rb/` `lua/` |
+| **CLI** | `go-cli/` |
+| **MCP server** | `go-mcp/` |
 
 ## Use it from an AI agent (MCP)
 
@@ -110,7 +90,7 @@ The API exposes one entity:
 
 | Entity | Description | API path |
 | --- | --- | --- |
-| **Catalog** | The portal's dataset catalog — individual datasets are addressed as Socrata resources at `https://data.colorado.gov/resource/{dataset-id}.json` and span business, transportation, demographics, water, energy, health, education, public safety, agriculture, recreation and early childhood. | `/catalog` |
+| **Catalog** |  | `/catalog` |
 
 Each entity supports the following operations where available: **load**,
 **list**, **create**, **update**, and **remove**.
@@ -120,12 +100,16 @@ Each entity supports the following operations where available: **load**,
 ### Python
 
 ```python
+import os
 from coloradoinformationmarketplace_sdk import ColoradoInformationMarketplaceSDK
 
-client = ColoradoInformationMarketplaceSDK({})
+client = ColoradoInformationMarketplaceSDK({
+    "apikey": os.environ.get("COLORADO-INFORMATION-MARKETPLACE_APIKEY"),
+})
 
 # List all catalogs
-catalogs, err = client.Catalog(None).list(None, None)
+catalogs, err = client.Catalog().list()
+print(catalogs)
 ```
 
 ### PHP
@@ -134,10 +118,13 @@ catalogs, err = client.Catalog(None).list(None, None)
 <?php
 require_once 'coloradoinformationmarketplace_sdk.php';
 
-$client = new ColoradoInformationMarketplaceSDK([]);
+$client = new ColoradoInformationMarketplaceSDK([
+    "apikey" => getenv("COLORADO-INFORMATION-MARKETPLACE_APIKEY"),
+]);
 
 // List all catalogs
-[$catalogs, $err] = $client->Catalog(null)->list(null, null);
+[$catalogs, $err] = $client->Catalog()->list();
+print_r($catalogs);
 ```
 
 ### Golang
@@ -145,10 +132,13 @@ $client = new ColoradoInformationMarketplaceSDK([]);
 ```go
 import sdk "github.com/voxgig-sdk/colorado-information-marketplace-sdk/go"
 
-client := sdk.NewColoradoInformationMarketplaceSDK(map[string]any{})
+client := sdk.NewColoradoInformationMarketplaceSDK(map[string]any{
+    "apikey": os.Getenv("COLORADO-INFORMATION-MARKETPLACE_APIKEY"),
+})
 
 // List all catalogs
 catalogs, err := client.Catalog(nil).List(nil, nil)
+fmt.Println(catalogs)
 ```
 
 ### Ruby
@@ -156,10 +146,13 @@ catalogs, err := client.Catalog(nil).List(nil, nil)
 ```ruby
 require_relative "ColoradoInformationMarketplace_sdk"
 
-client = ColoradoInformationMarketplaceSDK.new({})
+client = ColoradoInformationMarketplaceSDK.new({
+  "apikey" => ENV["COLORADO-INFORMATION-MARKETPLACE_APIKEY"],
+})
 
 # List all catalogs
-catalogs, err = client.Catalog(nil).list(nil, nil)
+catalogs, err = client.Catalog().list
+puts catalogs
 ```
 
 ### Lua
@@ -167,10 +160,13 @@ catalogs, err = client.Catalog(nil).list(nil, nil)
 ```lua
 local sdk = require("colorado-information-marketplace_sdk")
 
-local client = sdk.new({})
+local client = sdk.new({
+  apikey = os.getenv("COLORADO-INFORMATION-MARKETPLACE_APIKEY"),
+})
 
 -- List all catalogs
-local catalogs, err = client:Catalog(nil):list(nil, nil)
+local catalogs, err = client:Catalog():list()
+print(catalogs)
 ```
 
 ## Unit testing in offline mode
@@ -189,25 +185,21 @@ const result = await client.Catalog().load({ id: 'test01' })
 ### Python
 
 ```python
-client = ColoradoInformationMarketplaceSDK.test(None, None)
-result, err = client.Catalog(None).load(
-    {"id": "test01"}, None
-)
+client = ColoradoInformationMarketplaceSDK.test()
+result, err = client.Catalog().load({"id": "test01"})
 ```
 
 ### PHP
 
 ```php
-$client = ColoradoInformationMarketplaceSDK::test(null, null);
-[$result, $err] = $client->Catalog(null)->load(
-    ["id" => "test01"], null
-);
+$client = ColoradoInformationMarketplaceSDK::test();
+[$result, $err] = $client->Catalog()->load(["id" => "test01"]);
 ```
 
 ### Golang
 
 ```go
-client := sdk.TestSDK(nil, nil)
+client := sdk.Test()
 result, err := client.Catalog(nil).Load(
     map[string]any{"id": "test01"}, nil,
 )
@@ -216,19 +208,15 @@ result, err := client.Catalog(nil).Load(
 ### Ruby
 
 ```ruby
-client = ColoradoInformationMarketplaceSDK.test(nil, nil)
-result, err = client.Catalog(nil).load(
-  { "id" => "test01" }, nil
-)
+client = ColoradoInformationMarketplaceSDK.test
+result, err = client.Catalog().load({ "id" => "test01" })
 ```
 
 ### Lua
 
 ```lua
-local client = sdk.test(nil, nil)
-local result, err = client:Catalog(nil):load(
-  { id = "test01" }, nil
-)
+local client = sdk.test()
+local result, err = client:Catalog():load({ id = "test01" })
 ```
 
 ## How it works
@@ -332,15 +320,6 @@ local result, err = client:direct({
 - [Golang](go/README.md)
 - [Ruby](rb/README.md)
 - [Lua](lua/README.md)
-
-## Using the Colorado Information Marketplace
-
-- Upstream: [https://data.colorado.gov/](https://data.colorado.gov/)
-- API docs: [https://data.colorado.gov/browse](https://data.colorado.gov/browse)
-
-- Data is published by the State of Colorado as part of its open data programme; see the portal's [Terms of Use](https://data.colorado.gov/) for general conditions.
-- Each dataset may carry its own licence, attribution requirement or refresh schedule, so check the dataset metadata before redistribution.
-- The portal is powered by the Socrata Open Data platform (Tyler Technologies); the Socrata Open Data API (SODA) conventions apply to all `resource/{id}` endpoints.
 
 ---
 
