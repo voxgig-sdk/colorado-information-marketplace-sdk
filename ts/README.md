@@ -10,7 +10,7 @@ The TypeScript SDK for the ColoradoInformationMarketplace API — a type-safe, e
 
 ## Install
 ```bash
-npm install colorado-information-marketplace
+npm install @voxgig-sdk/colorado-information-marketplace
 ```
 ## Tutorial: your first API call
 

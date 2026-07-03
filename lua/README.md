@@ -10,7 +10,7 @@ The Lua SDK for the ColoradoInformationMarketplace API — an entity-oriented cl
 
 ## Install
 ```bash
-luarocks install colorado-information-marketplace-sdk
+luarocks install voxgig-sdk-colorado-information-marketplace
 ```
 
 If the module is not yet published, add the source directory to

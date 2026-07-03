@@ -10,7 +10,7 @@ The PHP SDK for the ColoradoInformationMarketplace API — an entity-oriented cl
 
 ## Install
 ```bash
-composer require voxgig/colorado-information-marketplace-sdk
+composer require voxgig-sdk/colorado-information-marketplace
 ```
 
 

@@ -10,7 +10,7 @@ The Python SDK for the ColoradoInformationMarketplace API — an entity-oriented
 
 ## Install
 ```bash
-pip install colorado-information-marketplace-sdk
+pip install voxgig-sdk-colorado-information-marketplace
 ```
 
 Or install from source:

@@ -10,13 +10,13 @@ The Ruby SDK for the ColoradoInformationMarketplace API — an entity-oriented c
 
 ## Install
 ```bash
-gem install colorado-information-marketplace-sdk
+gem install voxgig-sdk-colorado-information-marketplace
 ```
 
 Or add to your `Gemfile`:
 
 ```ruby
-gem "colorado-information-marketplace-sdk"
+gem "voxgig-sdk-colorado-information-marketplace"
 ```
 
 Then run:

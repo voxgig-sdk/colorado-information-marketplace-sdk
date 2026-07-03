@@ -8,12 +8,14 @@ source = {
   dir = "colorado-information-marketplace-sdk/lua"
 }
 description = {
-  summary = "ColoradoInformationMarketplace SDK for Lua",
-  license = "MIT"
+  summary = "Unofficial generated Lua SDK for the Colorado Information Marketplace public API. Not affiliated with or endorsed by the upstream API provider.",
+  homepage = "https://github.com/voxgig-sdk/colorado-information-marketplace-sdk",
+  issues_url = "https://github.com/voxgig-sdk/colorado-information-marketplace-sdk/issues",
+  license = "MIT",
+  labels = { "voxgig", "sdk", "generated-sdk", "openapi", "api-client", "colorado-information-marketplace" }
 }
 dependencies = {
   "lua >= 5.3",
-  "dkjson >= 2.5",
   "dkjson >= 2.5",
 }
 build = {
