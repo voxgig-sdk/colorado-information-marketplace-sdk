@@ -10,26 +10,24 @@ This is an unofficial SDK for the Colorado Information Marketplace public API, g
 
 | Language | Package | Install |
 | --- | --- | --- |
-| TypeScript | `@voxgig-sdk/colorado-information-marketplace` | `npm install @voxgig-sdk/colorado-information-marketplace` |
-| Python | `voxgig-sdk-colorado-information-marketplace` | `pip install voxgig-sdk-colorado-information-marketplace` |
-| PHP | `voxgig-sdk/colorado-information-marketplace` | `composer require voxgig-sdk/colorado-information-marketplace` |
-| Golang | `github.com/voxgig-sdk/colorado-information-marketplace-sdk/go` | `go get github.com/voxgig-sdk/colorado-information-marketplace-sdk/go` |
-| Ruby | `voxgig-sdk-colorado-information-marketplace` | `gem install voxgig-sdk-colorado-information-marketplace` |
-| Lua | `voxgig-sdk-colorado-information-marketplace` | `luarocks install voxgig-sdk-colorado-information-marketplace` |
+| TypeScript | `@voxgig-sdk/colorado-information-marketplace` | publish pending — [install from git tag](https://github.com/voxgig-sdk/colorado-information-marketplace-sdk/releases) |
+| Python | `voxgig-sdk-colorado-information-marketplace` | publish pending — [install from git tag](https://github.com/voxgig-sdk/colorado-information-marketplace-sdk/releases) |
+| PHP | `voxgig-sdk/colorado-information-marketplace` | publish pending — [install from git tag](https://github.com/voxgig-sdk/colorado-information-marketplace-sdk/releases) |
+| Golang | `github.com/voxgig-sdk/colorado-information-marketplace-sdk/go` | `go get github.com/voxgig-sdk/colorado-information-marketplace-sdk/go@latest` |
+| Ruby | `voxgig-sdk-colorado-information-marketplace` | publish pending — [install from git tag](https://github.com/voxgig-sdk/colorado-information-marketplace-sdk/releases) |
+| Lua | `voxgig-sdk-colorado-information-marketplace` | publish pending — [install from git tag](https://github.com/voxgig-sdk/colorado-information-marketplace-sdk/releases) |
 
 ## Quickstart
 
 ### TypeScript
 
 ```ts
-import { ColoradoInformationMarketplaceSDK } from 'colorado-information-marketplace'
+import { ColoradoInformationMarketplaceSDK } from '@voxgig-sdk/colorado-information-marketplace'
 
-const client = new ColoradoInformationMarketplaceSDK({
-  apikey: process.env.COLORADO-INFORMATION-MARKETPLACE_APIKEY,
-})
+const client = new ColoradoInformationMarketplaceSDK()
 
 // List all catalogs
-const catalogs = await client.Catalog().list()
+const catalogs = await client.catalog.list()
 console.log(catalogs.data)
 ```
 
@@ -71,7 +69,7 @@ The API exposes one entity:
 
 | Entity | Description | API path |
 | --- | --- | --- |
-| **Catalog** |  | `/catalog` |
+| **Catalog** | The Catalog entity (list). | `/catalog` |
 
 Each entity supports the following operations where available: **load**,
 **list**, **create**, **update**, and **remove**.
@@ -81,15 +79,12 @@ Each entity supports the following operations where available: **load**,
 ### Python
 
 ```python
-import os
 from coloradoinformationmarketplace_sdk import ColoradoInformationMarketplaceSDK
 
-client = ColoradoInformationMarketplaceSDK({
-    "apikey": os.environ.get("COLORADO-INFORMATION-MARKETPLACE_APIKEY"),
-})
+client = ColoradoInformationMarketplaceSDK()
 
 # List all catalogs
-catalogs, err = client.Catalog().list()
+catalogs = client.catalog.list()
 print(catalogs)
 ```
 
@@ -99,12 +94,10 @@ print(catalogs)
 <?php
 require_once 'coloradoinformationmarketplace_sdk.php';
 
-$client = new ColoradoInformationMarketplaceSDK([
-    "apikey" => getenv("COLORADO-INFORMATION-MARKETPLACE_APIKEY"),
-]);
+$client = new ColoradoInformationMarketplaceSDK();
 
-// List all catalogs
-[$catalogs, $err] = $client->Catalog()->list();
+// List all catalogs (throws on error)
+$catalogs = $client->catalog()->list();
 print_r($catalogs);
 ```
 
@@ -113,9 +106,7 @@ print_r($catalogs);
 ```go
 import sdk "github.com/voxgig-sdk/colorado-information-marketplace-sdk/go"
 
-client := sdk.NewColoradoInformationMarketplaceSDK(map[string]any{
-    "apikey": os.Getenv("COLORADO-INFORMATION-MARKETPLACE_APIKEY"),
-})
+client := sdk.New()
 
 // List all catalogs
 catalogs, err := client.Catalog(nil).List(nil, nil)
@@ -127,12 +118,10 @@ fmt.Println(catalogs)
 ```ruby
 require_relative "ColoradoInformationMarketplace_sdk"
 
-client = ColoradoInformationMarketplaceSDK.new({
-  "apikey" => ENV["COLORADO-INFORMATION-MARKETPLACE_APIKEY"],
-})
+client = ColoradoInformationMarketplaceSDK.new
 
 # List all catalogs
-catalogs, err = client.Catalog().list
+catalogs = client.catalog.list
 puts catalogs
 ```
 
@@ -141,12 +130,10 @@ puts catalogs
 ```lua
 local sdk = require("colorado-information-marketplace_sdk")
 
-local client = sdk.new({
-  apikey = os.getenv("COLORADO-INFORMATION-MARKETPLACE_APIKEY"),
-})
+local client = sdk.new()
 
 -- List all catalogs
-local catalogs, err = client:Catalog():list()
+local catalogs, err = client:catalog():list()
 print(catalogs)
 ```
 
@@ -159,7 +146,7 @@ in-memory mock, so unit tests run offline.
 
 ```ts
 const client = ColoradoInformationMarketplaceSDK.test()
-const result = await client.Catalog().load({ id: 'test01' })
+const result = await client.catalog.load({ id: 'test01' })
 // result.ok === true, result.data contains mock data
 ```
 
@@ -167,14 +154,14 @@ const result = await client.Catalog().load({ id: 'test01' })
 
 ```python
 client = ColoradoInformationMarketplaceSDK.test()
-result, err = client.Catalog().load({"id": "test01"})
+result = client.catalog.load({"id": "test01"})
 ```
 
 ### PHP
 
 ```php
 $client = ColoradoInformationMarketplaceSDK::test();
-[$result, $err] = $client->Catalog()->load(["id" => "test01"]);
+$result = $client->catalog()->load(["id" => "test01"]);
 ```
 
 ### Golang
@@ -190,14 +177,14 @@ result, err := client.Catalog(nil).Load(
 
 ```ruby
 client = ColoradoInformationMarketplaceSDK.test
-result, err = client.Catalog().load({ "id" => "test01" })
+result = client.catalog.load({ "id" => "test01" })
 ```
 
 ### Lua
 
 ```lua
 local client = sdk.test()
-local result, err = client:Catalog():load({ id = "test01" })
+local result, err = client:catalog():load({ id = "test01" })
 ```
 
 ## How it works
@@ -250,7 +237,7 @@ console.log(result.data)
 
 **Python:**
 ```python
-result, err = client.direct({
+result = client.direct({
     "path": "/api/resource/{id}",
     "method": "GET",
     "params": {"id": "example"},
@@ -259,7 +246,7 @@ result, err = client.direct({
 
 **PHP:**
 ```php
-[$result, $err] = $client->direct([
+$result = $client->direct([
     "path" => "/api/resource/{id}",
     "method" => "GET",
     "params" => ["id" => "example"],
@@ -277,7 +264,7 @@ result, err := client.Direct(map[string]any{
 
 **Ruby:**
 ```ruby
-result, err = client.direct({
+result = client.direct({
   "path" => "/api/resource/{id}",
   "method" => "GET",
   "params" => { "id" => "example" },

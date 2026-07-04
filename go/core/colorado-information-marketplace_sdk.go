@@ -245,6 +245,9 @@ func (sdk *ColoradoInformationMarketplaceSDK) Direct(fetchargs map[string]any) (
 }
 
 
+// Catalog returns a Catalog entity bound to this client.
+// Idiomatic usage: client.Catalog(nil).List(nil, nil) or
+// client.Catalog(nil).Load(map[string]any{"id": ...}, nil).
 func (sdk *ColoradoInformationMarketplaceSDK) Catalog(data map[string]any) ColoradoInformationMarketplaceEntity {
 	return NewCatalogEntityFunc(sdk, data)
 }
