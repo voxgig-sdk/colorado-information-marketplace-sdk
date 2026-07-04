@@ -4,37 +4,39 @@
 # params (op.<name>.points[].args.params[]). Field/param types come from the
 # canonical type sentinels via @voxgig/sdkgen canonToType (source of truth:
 # @voxgig/apidef VALID_CANON). Do not edit by hand.
+#
+# These are TypedDicts, not dataclasses: the SDK ops return/accept plain dicts
+# at runtime, and a TypedDict IS a dict shape, so the types match the runtime.
+# Optional (req:false) keys are modelled as TypedDict key-optionality
+# (total=False), split into a required base + total=False subclass when a type
+# has both required and optional keys.
 
 from __future__ import annotations
 
-from dataclasses import dataclass
-from typing import Optional, Any
+from typing import TypedDict, Any
 
 
-@dataclass
-class Catalog:
-    category: Optional[str] = None
-    created_at: Optional[str] = None
-    description: Optional[str] = None
-    id: Optional[str] = None
-    publisher: Optional[str] = None
-    tag: Optional[list] = None
-    title: Optional[str] = None
-    type: Optional[str] = None
-    updated_at: Optional[str] = None
-    url: Optional[str] = None
+class Catalog(TypedDict, total=False):
+    category: str
+    created_at: str
+    description: str
+    id: str
+    publisher: str
+    tag: list
+    title: str
+    type: str
+    updated_at: str
+    url: str
 
 
-@dataclass
-class CatalogListMatch:
-    category: Optional[str] = None
-    created_at: Optional[str] = None
-    description: Optional[str] = None
-    id: Optional[str] = None
-    publisher: Optional[str] = None
-    tag: Optional[list] = None
-    title: Optional[str] = None
-    type: Optional[str] = None
-    updated_at: Optional[str] = None
-    url: Optional[str] = None
-
+class CatalogListMatch(TypedDict, total=False):
+    category: str
+    created_at: str
+    description: str
+    id: str
+    publisher: str
+    tag: list
+    title: str
+    type: str
+    updated_at: str
+    url: str

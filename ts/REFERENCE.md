@@ -109,7 +109,7 @@ Alias for `ColoradoInformationMarketplaceSDK.test()`.
 ## CatalogEntity
 
 ```ts
-const catalog = client.catalog
+const catalog = client.Catalog()
 ```
 
 ### Fields
@@ -134,7 +134,7 @@ const catalog = client.catalog
 List entities matching the given criteria. Returns an array.
 
 ```ts
-const results = await client.catalog.list()
+const results = await client.Catalog().list()
 ```
 
 ### Common Methods

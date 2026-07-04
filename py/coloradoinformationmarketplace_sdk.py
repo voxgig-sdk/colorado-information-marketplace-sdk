@@ -220,25 +220,15 @@ class ColoradoInformationMarketplaceSDK:
         }
 
 
-    @property
-    def catalog(self):
-        """Idiomatic facade: client.catalog.list() / client.catalog.load({"id": ...})."""
-        from entity.catalog_entity import CatalogEntity
-        cached = getattr(self, "_catalog", None)
-        if cached is None:
-            cached = CatalogEntity(self, None)
-            self._catalog = cached
-        return cached
-
-    def Catalog(self, data=None):
-        # Deprecated: use client.catalog instead.
+    def Catalog(self, data=None) -> "CatalogEntity":
+        """Entity factory: client.Catalog().list({}) / client.Catalog().load({"id": ...})."""
         from entity.catalog_entity import CatalogEntity
         return CatalogEntity(self, data)
 
 
 
     @classmethod
-    def test(cls, testopts=None, sdkopts=None):
+    def test(cls, testopts=None, sdkopts=None) -> "ColoradoInformationMarketplaceSDK":
         if sdkopts is None:
             sdkopts = {}
         sdkopts = vs.clone(sdkopts)
@@ -258,3 +248,9 @@ class ColoradoInformationMarketplaceSDK:
         sdk.mode = "test"
 
         return sdk
+
+
+from typing import TYPE_CHECKING
+
+if TYPE_CHECKING:
+    from entity.catalog_entity import CatalogEntity
