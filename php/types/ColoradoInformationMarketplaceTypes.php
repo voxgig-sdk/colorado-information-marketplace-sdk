@@ -27,7 +27,7 @@ class Catalog
     public ?string $url = null;
 }
 
-/** Match filter for Catalog#list (any subset of Catalog fields). */
+/** Request payload for Catalog#list. */
 class CatalogListMatch
 {
     public ?string $category = null;

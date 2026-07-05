@@ -19,6 +19,16 @@
 ---@field url? string
 
 ---@class CatalogListMatch
+---@field category? string
+---@field created_at? string
+---@field description? string
+---@field id? string
+---@field publisher? string
+---@field tag? table
+---@field title? string
+---@field type? string
+---@field updated_at? string
+---@field url? string
 
 local M = {}
 

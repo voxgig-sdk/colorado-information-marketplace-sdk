@@ -8,7 +8,7 @@ Complete API reference for the ColoradoInformationMarketplace Python SDK.
 ### Constructor
 
 ```python
-from colorado-information-marketplace_sdk import ColoradoInformationMarketplaceSDK
+from coloradoinformationmarketplace_sdk import ColoradoInformationMarketplaceSDK
 
 client = ColoradoInformationMarketplaceSDK(options)
 ```
@@ -87,25 +87,25 @@ catalog = client.Catalog()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `category` | ``$STRING`` | No |  |
-| `created_at` | ``$STRING`` | No |  |
-| `description` | ``$STRING`` | No |  |
-| `id` | ``$STRING`` | No |  |
-| `publisher` | ``$STRING`` | No |  |
-| `tag` | ``$ARRAY`` | No |  |
-| `title` | ``$STRING`` | No |  |
-| `type` | ``$STRING`` | No |  |
-| `updated_at` | ``$STRING`` | No |  |
-| `url` | ``$STRING`` | No |  |
+| `category` | `str` | No |  |
+| `created_at` | `str` | No |  |
+| `description` | `str` | No |  |
+| `id` | `str` | No |  |
+| `publisher` | `str` | No |  |
+| `tag` | `list` | No |  |
+| `title` | `str` | No |  |
+| `type` | `str` | No |  |
+| `updated_at` | `str` | No |  |
+| `url` | `str` | No |  |
 
 ### Operations
 
-#### `list(reqmatch, ctrl=None) -> list`
+#### `list(reqmatch=None, ctrl=None) -> list`
 
-List entities matching the given criteria. Returns a list and raises on error.
+List entities matching the given criteria. The match is optional — call `list()` with no argument to list all records. Returns a list and raises on error.
 
 ```python
-results = client.Catalog().list({})
+results = client.Catalog().list()
 for catalog in results:
     print(catalog)
 ```

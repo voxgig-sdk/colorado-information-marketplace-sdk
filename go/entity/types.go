@@ -22,8 +22,7 @@ type Catalog struct {
 	Url *string `json:"url,omitempty"`
 }
 
-// CatalogListMatch mirrors the catalog fields as an all-optional match
-// filter (Go analog of Partial<Catalog>).
+// CatalogListMatch is the typed request payload for Catalog.ListTyped.
 type CatalogListMatch struct {
 	Category *string `json:"category,omitempty"`
 	CreatedAt *string `json:"created_at,omitempty"`

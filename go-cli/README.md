@@ -17,8 +17,6 @@ go build -o colorado-information-marketplace-cli ./...
 ```sh
 # One-shot: arguments form a single AQL expression
 ./colorado-information-marketplace-cli list catalog
-./colorado-information-marketplace-cli load 1 catalog
-./colorado-information-marketplace-cli load '{id:1}' catalog
 
 # REPL
 ./colorado-information-marketplace-cli
@@ -29,8 +27,6 @@ go build -o colorado-information-marketplace-cli ./...
 | Word     | Signatures                                   | Description                |
 |----------|----------------------------------------------|----------------------------|
 | `list`   | `[entity]` · `[query entity]`                | List records               |
-| `load`   | `[entity]` · `[query entity]`                | Load a single record       |
-| `update` | `[entity]` · `[query entity]`                | Update a record            |
 
 `query` is either a Map (`{id:1}`) or a Scalar (`1`, treated as `{id:1}`).
 `entity` is one of the SDK's entity names (auto-quoted as an atom).

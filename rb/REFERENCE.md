@@ -8,7 +8,7 @@ Complete API reference for the ColoradoInformationMarketplace Ruby SDK.
 ### Constructor
 
 ```ruby
-require_relative 'colorado-information-marketplace_sdk'
+require_relative 'ColoradoInformationMarketplace_sdk'
 
 client = ColoradoInformationMarketplaceSDK.new(options)
 ```
@@ -93,25 +93,25 @@ catalog = client.Catalog
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `category` | ``$STRING`` | No |  |
-| `created_at` | ``$STRING`` | No |  |
-| `description` | ``$STRING`` | No |  |
-| `id` | ``$STRING`` | No |  |
-| `publisher` | ``$STRING`` | No |  |
-| `tag` | ``$ARRAY`` | No |  |
-| `title` | ``$STRING`` | No |  |
-| `type` | ``$STRING`` | No |  |
-| `updated_at` | ``$STRING`` | No |  |
-| `url` | ``$STRING`` | No |  |
+| `category` | `String` | No |  |
+| `created_at` | `String` | No |  |
+| `description` | `String` | No |  |
+| `id` | `String` | No |  |
+| `publisher` | `String` | No |  |
+| `tag` | `Array` | No |  |
+| `title` | `String` | No |  |
+| `type` | `String` | No |  |
+| `updated_at` | `String` | No |  |
+| `url` | `String` | No |  |
 
 ### Operations
 
-#### `list(reqmatch, ctrl = nil) -> Array`
+#### `list(reqmatch = nil, ctrl = nil) -> Array`
 
-List entities matching the given criteria. Returns an array. Raises on error.
+List entities matching the given criteria (call with no argument to list all). Returns an array. Raises on error.
 
 ```ruby
-results = client.Catalog.list(nil)
+results = client.Catalog.list
 ```
 
 ### Common Methods

@@ -18,5 +18,16 @@ export interface Catalog {
   url?: string
 }
 
-export type CatalogListMatch = Partial<Catalog>
+export interface CatalogListMatch {
+  category?: string
+  created_at?: string
+  description?: string
+  id?: string
+  publisher?: string
+  tag?: any[]
+  title?: string
+  type?: string
+  updated_at?: string
+  url?: string
+}
 
