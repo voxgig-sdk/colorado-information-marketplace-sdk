@@ -6,9 +6,6 @@
     },
     "kit": {
       "config": {
-        "auth": {
-          "prefix": "Bearer"
-        },
         "docs_order": [
           "ts",
           "py",
@@ -302,15 +299,18 @@
           "url": "https://data.colorado.gov"
         },
         "description": "Explore a wide range of public datasets and resources from the Colorado Information Marketplace, including information on government revenue and expenditures, transportation, demographics, business, and more. Access charts, maps, datasets, and documents to gain insights into various aspects of life in Colorado. A valuable tool for researchers, businesses, and the general public seeking data-driven insights.",
+        "meta_source": "https://www.freepublicapis.com",
         "servers": [
           {
             "description": "Colorado Information Marketplace API",
             "url": "https://data.colorado.gov/api"
           }
         ],
+        "summary": "Explore a wide range of public datasets and resources from the Colorado Information Marketplace, including information on government revenue and expenditures, transportation, demographics, business, and more.",
         "termsOfService": "https://colorado.gov/terms-of-use",
         "title": "Colorado Information Marketplace",
-        "version": "1.0.0"
+        "version": "1.0.0",
+        "website": "https://data.colorado.gov"
       },
       "option": {},
       "target": {
@@ -363,6 +363,9 @@
           },
           "name": "go-cli",
           "phase": {
+            "agentguide": {
+              "active": false
+            },
             "entity": {
               "active": false
             },
@@ -413,6 +416,9 @@
           },
           "name": "go-mcp",
           "phase": {
+            "agentguide": {
+              "active": false
+            },
             "entity": {
               "active": false
             },

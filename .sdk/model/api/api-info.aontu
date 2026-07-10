@@ -16,10 +16,10 @@ main: {
           url: "https://data.colorado.gov/api"
         }
       ]
+      summary: "Explore a wide range of public datasets and resources from the Colorado Information Marketplace, including information on government revenue and expenditures, transportation, demographics, business, and more."
       termsOfService: "https://colorado.gov/terms-of-use"
       title: "Colorado Information Marketplace"
       version: "1.0.0"
+      website: "https://data.colorado.gov"
     }
   }
-}
-
