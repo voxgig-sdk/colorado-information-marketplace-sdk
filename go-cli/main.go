@@ -27,7 +27,20 @@ func main() {
 }
 
 func run(args []string, in io.Reader, out, errOut io.Writer) int {
-	client := sdk.NewColoradoInformationMarketplaceSDK(nil)
+	// Configure from the environment: COLORADO_INFORMATION_MARKETPLACE_APIKEY carries the API key and
+	// COLORADO_INFORMATION_MARKETPLACE_BASE optionally overrides the API base URL (e.g. production).
+	// Both injectable by a secrets vault. Unset -> nil config defaults.
+	var opts map[string]any
+	if apikey := os.Getenv("COLORADO_INFORMATION_MARKETPLACE_APIKEY"); apikey != "" {
+		opts = map[string]any{"apikey": apikey}
+	}
+	if base := os.Getenv("COLORADO_INFORMATION_MARKETPLACE_BASE"); base != "" {
+		if opts == nil {
+			opts = map[string]any{}
+		}
+		opts["base"] = base
+	}
+	client := sdk.NewColoradoInformationMarketplaceSDK(opts)
 
 	r, err := eng.NewRegistry()
 	if err != nil {
