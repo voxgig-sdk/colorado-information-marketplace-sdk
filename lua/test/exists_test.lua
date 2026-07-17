@@ -1,4 +1,4 @@
--- ProjectName SDK exists test
+-- ColoradoInformationMarketplace SDK exists test
 
 local sdk = require("colorado-information-marketplace_sdk")
 
