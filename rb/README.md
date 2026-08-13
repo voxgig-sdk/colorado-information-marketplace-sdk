@@ -119,7 +119,8 @@ Create a mock client for unit testing — no server required:
 ```ruby
 client = ColoradoInformationMarketplaceSDK.test
 
-# Entity ops return the bare mock record (raises on error).
+# Entity ops return the ENTITY (raises on error);
+# call data_get for the mock record.
 catalog = client.Catalog.list()
 puts catalog
 ```
@@ -241,7 +242,7 @@ returns a result `Hash` with these keys:
 | `description` |  |
 | `id` |  |
 | `publisher` |  |
-| `tag` |  |
+| `tags` |  |
 | `title` |  |
 | `type` |  |
 | `updated_at` |  |
@@ -275,7 +276,7 @@ Create an instance: `catalog = client.Catalog`
 | `description` | `String` |  |
 | `id` | `String` |  |
 | `publisher` | `String` |  |
-| `tag` | `Array` |  |
+| `tags` | `Array` |  |
 | `title` | `String` |  |
 | `type` | `String` |  |
 | `updated_at` | `String` |  |

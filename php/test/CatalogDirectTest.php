@@ -66,11 +66,11 @@ function catalog_direct_setup($mockres)
     $calls = new \ArrayObject();
 
     $env = Runner::env_override([
-        "COLORADOINFORMATIONMARKETPLACE_TEST_CATALOG_ENTID" => [],
-        "COLORADOINFORMATIONMARKETPLACE_TEST_LIVE" => "FALSE",
+        "COLORADO_INFORMATION_MARKETPLACE_TEST_CATALOG_ENTID" => [],
+        "COLORADO_INFORMATION_MARKETPLACE_TEST_LIVE" => "FALSE",
     ]);
 
-    $live = $env["COLORADOINFORMATIONMARKETPLACE_TEST_LIVE"] === "TRUE";
+    $live = $env["COLORADO_INFORMATION_MARKETPLACE_TEST_LIVE"] === "TRUE";
 
     if ($live) {
         $merged_opts = [

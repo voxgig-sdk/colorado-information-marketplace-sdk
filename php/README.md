@@ -125,7 +125,8 @@ Create a mock client for unit testing — no server required:
 ```php
 $client = ColoradoInformationMarketplaceSDK::test();
 
-// Entity ops return the bare mock record (throws on error).
+// Entity ops return the ENTITY (throws on error);
+// call data_get() for the mock record.
 $catalog = $client->Catalog()->list();
 print_r($catalog);
 ```
@@ -224,7 +225,7 @@ All entities share the same interface.
 
 ### Result shape
 
-Entity operations return the bare result data (an `array` for single-entity
+Entity operations return the ENTITY (call data_get() for the record) (an `array` for single-entity
 ops, a `list` for `list`) and throw on error. Wrap calls in
 `try`/`catch` to handle failures.
 
@@ -251,7 +252,7 @@ On error, `ok` is `false` and `$err` contains the error value.
 | `description` |  |
 | `id` |  |
 | `publisher` |  |
-| `tag` |  |
+| `tags` |  |
 | `title` |  |
 | `type` |  |
 | `updated_at` |  |
@@ -285,7 +286,7 @@ Create an instance: `$catalog = $client->Catalog();`
 | `description` | `string` |  |
 | `id` | `string` |  |
 | `publisher` | `string` |  |
-| `tag` | `array` |  |
+| `tags` | `array` |  |
 | `title` | `string` |  |
 | `type` | `string` |  |
 | `updated_at` | `string` |  |

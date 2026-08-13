@@ -61,11 +61,11 @@ function catalog_direct_setup(mockres)
   local calls = {}
 
   local env = runner.env_override({
-    ["COLORADOINFORMATIONMARKETPLACE_TEST_CATALOG_ENTID"] = {},
-    ["COLORADOINFORMATIONMARKETPLACE_TEST_LIVE"] = "FALSE",
+    ["COLORADO_INFORMATION_MARKETPLACE_TEST_CATALOG_ENTID"] = {},
+    ["COLORADO_INFORMATION_MARKETPLACE_TEST_LIVE"] = "FALSE",
   })
 
-  local live = env["COLORADOINFORMATIONMARKETPLACE_TEST_LIVE"] == "TRUE"
+  local live = env["COLORADO_INFORMATION_MARKETPLACE_TEST_LIVE"] == "TRUE"
 
   if live then
     local merged_opts = {

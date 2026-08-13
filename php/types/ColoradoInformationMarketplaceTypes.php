@@ -20,7 +20,7 @@ class Catalog
     public ?string $description = null;
     public ?string $id = null;
     public ?string $publisher = null;
-    public ?array $tag = null;
+    public ?array $tags = null;
     public ?string $title = null;
     public ?string $type = null;
     public ?string $updated_at = null;
@@ -35,7 +35,7 @@ class CatalogListMatch
     public ?string $description = null;
     public ?string $id = null;
     public ?string $publisher = null;
-    public ?array $tag = null;
+    public ?array $tags = null;
     public ?string $title = null;
     public ?string $type = null;
     public ?string $updated_at = null;

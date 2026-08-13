@@ -67,7 +67,7 @@ class ColoradoInformationMarketplaceConfig
             ],
             [
               'active' => true,
-              'name' => 'tag',
+              'name' => 'tags',
               'req' => false,
               'type' => '`$ARRAY`',
               'index$' => 5,
@@ -155,6 +155,7 @@ class ColoradoInformationMarketplaceConfig
                       ],
                     ],
                   ],
+                  'kind' => 'http',
                   'method' => 'GET',
                   'orig' => '/catalog',
                   'parts' => [
@@ -171,7 +172,7 @@ class ColoradoInformationMarketplaceConfig
                   ],
                   'transform' => [
                     'req' => '`reqdata`',
-                    'res' => '`body`',
+                    'res' => '`body.results`',
                   ],
                   'index$' => 0,
                 ],

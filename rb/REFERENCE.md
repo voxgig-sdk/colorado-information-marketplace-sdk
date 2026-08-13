@@ -98,7 +98,7 @@ catalog = client.Catalog
 | `description` | `String` | No |  |
 | `id` | `String` | No |  |
 | `publisher` | `String` | No |  |
-| `tag` | `Array` | No |  |
+| `tags` | `Array` | No |  |
 | `title` | `String` | No |  |
 | `type` | `String` | No |  |
 | `updated_at` | `String` | No |  |

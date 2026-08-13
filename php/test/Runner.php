@@ -43,8 +43,8 @@ class ColoradoInformationMarketplaceTestRunner
 
     public static function env_override(array $m): array
     {
-        $live = self::getenv('COLORADOINFORMATIONMARKETPLACE_TEST_LIVE');
-        $override = self::getenv('COLORADOINFORMATIONMARKETPLACE_TEST_OVERRIDE');
+        $live = self::getenv('COLORADO_INFORMATION_MARKETPLACE_TEST_LIVE');
+        $override = self::getenv('COLORADO_INFORMATION_MARKETPLACE_TEST_OVERRIDE');
 
         if ($live === 'TRUE' || $override === 'TRUE') {
             foreach (array_keys($m) as $key) {
@@ -63,9 +63,9 @@ class ColoradoInformationMarketplaceTestRunner
             }
         }
 
-        $explain = self::getenv('COLORADOINFORMATIONMARKETPLACE_TEST_EXPLAIN');
+        $explain = self::getenv('COLORADO_INFORMATION_MARKETPLACE_TEST_EXPLAIN');
         if ($explain !== null && $explain !== '') {
-            $m['COLORADOINFORMATIONMARKETPLACE_TEST_EXPLAIN'] = $explain;
+            $m['COLORADO_INFORMATION_MARKETPLACE_TEST_EXPLAIN'] = $explain;
         }
 
         return $m;

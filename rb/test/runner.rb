@@ -23,8 +23,8 @@ module ColoradoInformationMarketplaceTestRunner
   end
 
   def self.env_override(m)
-    live = getenv("COLORADOINFORMATIONMARKETPLACE_TEST_LIVE")
-    override = getenv("COLORADOINFORMATIONMARKETPLACE_TEST_OVERRIDE")
+    live = getenv("COLORADO_INFORMATION_MARKETPLACE_TEST_LIVE")
+    override = getenv("COLORADO_INFORMATION_MARKETPLACE_TEST_OVERRIDE")
 
     if live == "TRUE" || override == "TRUE"
       m.each_key do |key|
@@ -44,8 +44,8 @@ module ColoradoInformationMarketplaceTestRunner
       end
     end
 
-    explain = getenv("COLORADOINFORMATIONMARKETPLACE_TEST_EXPLAIN")
-    m["COLORADOINFORMATIONMARKETPLACE_TEST_EXPLAIN"] = explain if explain && !explain.empty?
+    explain = getenv("COLORADO_INFORMATION_MARKETPLACE_TEST_EXPLAIN")
+    m["COLORADO_INFORMATION_MARKETPLACE_TEST_EXPLAIN"] = explain if explain && !explain.empty?
 
     m
   end

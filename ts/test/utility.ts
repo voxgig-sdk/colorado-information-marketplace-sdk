@@ -62,8 +62,8 @@ function makeCtrl(explain: boolean) {
 // Overrides configuration values with environment variables if available
 function envOverride(m: Record<string, any>) {
   if (
-    'TRUE' === process.env.COLORADOINFORMATIONMARKETPLACE_TEST_LIVE ||
-    'TRUE' === process.env.COLORADOINFORMATIONMARKETPLACE_TEST_OVERRIDE
+    'TRUE' === process.env.COLORADO_INFORMATION_MARKETPLACE_TEST_LIVE ||
+    'TRUE' === process.env.COLORADO_INFORMATION_MARKETPLACE_TEST_OVERRIDE
   ) {
     Object.entries(m).map(n => {
       let envval = process.env[n[0]]
@@ -74,7 +74,7 @@ function envOverride(m: Record<string, any>) {
     })
   }
 
-  m.COLORADOINFORMATIONMARKETPLACE_TEST_EXPLAIN = process.env.COLORADOINFORMATIONMARKETPLACE_TEST_EXPLAIN || m.COLORADOINFORMATIONMARKETPLACE_TEST_EXPLAIN
+  m.COLORADO_INFORMATION_MARKETPLACE_TEST_EXPLAIN = process.env.COLORADO_INFORMATION_MARKETPLACE_TEST_EXPLAIN || m.COLORADO_INFORMATION_MARKETPLACE_TEST_EXPLAIN
 
   return m
 }

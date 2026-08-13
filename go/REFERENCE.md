@@ -103,7 +103,7 @@ fmt.Println(catalog.GetName()) // "catalog"
 | `description` | `string` | No |  |
 | `id` | `string` | No |  |
 | `publisher` | `string` | No |  |
-| `tag` | `[]any` | No |  |
+| `tags` | `[]any` | No |  |
 | `title` | `string` | No |  |
 | `type` | `string` | No |  |
 | `updated_at` | `string` | No |  |

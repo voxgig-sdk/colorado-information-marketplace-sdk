@@ -92,7 +92,7 @@ catalog = client.Catalog()
 | `description` | `str` | No |  |
 | `id` | `str` | No |  |
 | `publisher` | `str` | No |  |
-| `tag` | `list` | No |  |
+| `tags` | `list` | No |  |
 | `title` | `str` | No |  |
 | `type` | `str` | No |  |
 | `updated_at` | `str` | No |  |

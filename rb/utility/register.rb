@@ -24,6 +24,7 @@ require_relative 'prepare_method'
 require_relative 'prepare_params'
 require_relative 'prepare_path'
 require_relative 'prepare_query'
+require_relative 'graphql'
 require_relative 'result_basic'
 require_relative 'result_body'
 require_relative 'result_headers'
@@ -55,6 +56,8 @@ ColoradoInformationMarketplaceUtility.registrar = ->(u) {
   u.prepare_params = ColoradoInformationMarketplaceUtilities::PrepareParams
   u.prepare_path = ColoradoInformationMarketplaceUtilities::PreparePath
   u.prepare_query = ColoradoInformationMarketplaceUtilities::PrepareQuery
+  u.graphql_body = ColoradoInformationMarketplaceUtilities::GraphqlBody
+  u.graphql_errors = ColoradoInformationMarketplaceUtilities::GraphqlErrors
   u.result_basic = ColoradoInformationMarketplaceUtilities::ResultBasic
   u.result_body = ColoradoInformationMarketplaceUtilities::ResultBody
   u.result_headers = ColoradoInformationMarketplaceUtilities::ResultHeaders

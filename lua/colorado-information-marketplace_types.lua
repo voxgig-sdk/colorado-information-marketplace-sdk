@@ -12,7 +12,7 @@
 ---@field description? string
 ---@field id? string
 ---@field publisher? string
----@field tag? table
+---@field tags? table
 ---@field title? string
 ---@field type? string
 ---@field updated_at? string
@@ -24,7 +24,7 @@
 ---@field description? string
 ---@field id? string
 ---@field publisher? string
----@field tag? table
+---@field tags? table
 ---@field title? string
 ---@field type? string
 ---@field updated_at? string

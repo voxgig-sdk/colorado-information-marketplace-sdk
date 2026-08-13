@@ -3,9 +3,9 @@
 import json
 import pytest
 
-from utility.voxgig_struct import voxgig_struct as vs
+from coloradoinformationmarketplace_sdk.utility.voxgig_struct import voxgig_struct as vs
 from coloradoinformationmarketplace_sdk import ColoradoInformationMarketplaceSDK
-from core import helpers
+from coloradoinformationmarketplace_sdk.core import helpers
 from test import runner
 
 
@@ -58,11 +58,11 @@ def _catalog_direct_setup(mockres):
     calls = []
 
     env = runner.env_override({
-        "COLORADOINFORMATIONMARKETPLACE_TEST_CATALOG_ENTID": {},
-        "COLORADOINFORMATIONMARKETPLACE_TEST_LIVE": "FALSE",
+        "COLORADO_INFORMATION_MARKETPLACE_TEST_CATALOG_ENTID": {},
+        "COLORADO_INFORMATION_MARKETPLACE_TEST_LIVE": "FALSE",
     })
 
-    live = env.get("COLORADOINFORMATIONMARKETPLACE_TEST_LIVE") == "TRUE"
+    live = env.get("COLORADO_INFORMATION_MARKETPLACE_TEST_LIVE") == "TRUE"
 
     if live:
         merged_opts = {

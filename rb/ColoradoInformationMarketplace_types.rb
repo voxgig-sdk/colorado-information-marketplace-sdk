@@ -25,7 +25,7 @@
 # @!attribute [rw] publisher
 #   @return [String, nil]
 #
-# @!attribute [rw] tag
+# @!attribute [rw] tags
 #   @return [Array, nil]
 #
 # @!attribute [rw] title
@@ -45,7 +45,7 @@ Catalog = Struct.new(
   :description,
   :id,
   :publisher,
-  :tag,
+  :tags,
   :title,
   :type,
   :updated_at,
@@ -70,7 +70,7 @@ Catalog = Struct.new(
 # @!attribute [rw] publisher
 #   @return [String, nil]
 #
-# @!attribute [rw] tag
+# @!attribute [rw] tags
 #   @return [Array, nil]
 #
 # @!attribute [rw] title
@@ -90,7 +90,7 @@ CatalogListMatch = Struct.new(
   :description,
   :id,
   :publisher,
-  :tag,
+  :tags,
   :title,
   :type,
   :updated_at,

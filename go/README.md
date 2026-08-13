@@ -265,7 +265,7 @@ Only `Direct()` returns a response envelope — a `map[string]any` with
 | `"description"` |  |
 | `"id"` |  |
 | `"publisher"` |  |
-| `"tag"` |  |
+| `"tags"` |  |
 | `"title"` |  |
 | `"type"` |  |
 | `"updated_at"` |  |
@@ -299,7 +299,7 @@ Create an instance: `catalog := client.Catalog(nil)`
 | `description` | `string` |  |
 | `id` | `string` |  |
 | `publisher` | `string` |  |
-| `tag` | `[]any` |  |
+| `tags` | `[]any` |  |
 | `title` | `string` |  |
 | `type` | `string` |  |
 | `updated_at` | `string` |  |

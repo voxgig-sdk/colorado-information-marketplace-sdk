@@ -97,7 +97,7 @@ $catalog = $client->Catalog();
 | `description` | `string` | No |  |
 | `id` | `string` | No |  |
 | `publisher` | `string` | No |  |
-| `tag` | `array` | No |  |
+| `tags` | `array` | No |  |
 | `title` | `string` | No |  |
 | `type` | `string` | No |  |
 | `updated_at` | `string` | No |  |

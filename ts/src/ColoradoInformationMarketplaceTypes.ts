@@ -11,7 +11,7 @@ export interface Catalog {
   description?: string
   id?: string
   publisher?: string
-  tag?: any[]
+  tags?: any[]
   title?: string
   type?: string
   updated_at?: string
@@ -24,7 +24,7 @@ export interface CatalogListMatch {
   description?: string
   id?: string
   publisher?: string
-  tag?: any[]
+  tags?: any[]
   title?: string
   type?: string
   updated_at?: string

@@ -16,11 +16,11 @@
 import pytest
 
 from coloradoinformationmarketplace_sdk import ColoradoInformationMarketplaceSDK
-from core.error import ColoradoInformationMarketplaceError
-from core.result import ColoradoInformationMarketplaceResult
-from core.response import ColoradoInformationMarketplaceResponse
-from core.spec import ColoradoInformationMarketplaceSpec
-from feature.base_feature import ColoradoInformationMarketplaceBaseFeature
+from coloradoinformationmarketplace_sdk.core.error import ColoradoInformationMarketplaceError
+from coloradoinformationmarketplace_sdk.core.result import ColoradoInformationMarketplaceResult
+from coloradoinformationmarketplace_sdk.core.response import ColoradoInformationMarketplaceResponse
+from coloradoinformationmarketplace_sdk.core.spec import ColoradoInformationMarketplaceSpec
+from coloradoinformationmarketplace_sdk.feature.base_feature import ColoradoInformationMarketplaceBaseFeature
 
 
 def _client():
