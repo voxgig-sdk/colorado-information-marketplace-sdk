@@ -40,7 +40,7 @@ class CatalogEntityTest extends TestCase
         $this->assertCount(3, $seen);
 
         // Inbound: streaming active -> yields each item from the feature.
-        $cfg = ColoradoInformationMarketplaceConfig::make_config();
+        $cfg = ColoradoInformationMarketplaceConfig::shared_config();
         if (isset($cfg["feature"]) && is_array($cfg["feature"]) && isset($cfg["feature"]["streaming"])) {
             $sdk = ColoradoInformationMarketplaceSDK::test($seed, ["feature" => ["streaming" => ["active" => true]]]);
             $got = [];

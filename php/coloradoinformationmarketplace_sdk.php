@@ -40,7 +40,7 @@ class ColoradoInformationMarketplaceSDK
         $utility = new ColoradoInformationMarketplaceUtility();
         $this->_utility = $utility;
 
-        $config = ColoradoInformationMarketplaceConfig::make_config();
+        $config = ColoradoInformationMarketplaceConfig::shared_config();
 
         $this->_rootctx = ($utility->make_context)([
             "client" => $this,

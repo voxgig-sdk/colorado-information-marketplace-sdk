@@ -23,6 +23,7 @@ build = {
   modules = {
     ["colorado-information-marketplace_sdk"] = "colorado-information-marketplace_sdk.lua",
     ["config"] = "config.lua",
+    ["config_shared"] = "config_shared.lua",
     ["features"] = "features.lua",
   }
 }

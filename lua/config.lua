@@ -1,5 +1,8 @@
 -- ColoradoInformationMarketplace SDK configuration
 
+-- Build a fresh, fully materialised config table. Every call rebuilds the
+-- whole structure, so prefer require("config_shared") unless you need a
+-- private copy you intend to mutate.
 local function make_config()
   return {
     main = {
@@ -25,74 +28,44 @@ local function make_config()
       ["catalog"] = {
         ["fields"] = {
           {
-            ["active"] = true,
             ["name"] = "category",
-            ["req"] = false,
             ["type"] = "`$STRING`",
-            ["index$"] = 0,
           },
           {
-            ["active"] = true,
             ["name"] = "created_at",
-            ["req"] = false,
             ["type"] = "`$STRING`",
-            ["index$"] = 1,
           },
           {
-            ["active"] = true,
             ["name"] = "description",
-            ["req"] = false,
             ["type"] = "`$STRING`",
-            ["index$"] = 2,
           },
           {
-            ["active"] = true,
             ["name"] = "id",
-            ["req"] = false,
             ["type"] = "`$STRING`",
-            ["index$"] = 3,
           },
           {
-            ["active"] = true,
             ["name"] = "publisher",
-            ["req"] = false,
             ["type"] = "`$STRING`",
-            ["index$"] = 4,
           },
           {
-            ["active"] = true,
             ["name"] = "tags",
-            ["req"] = false,
             ["type"] = "`$ARRAY`",
-            ["index$"] = 5,
           },
           {
-            ["active"] = true,
             ["name"] = "title",
-            ["req"] = false,
             ["type"] = "`$STRING`",
-            ["index$"] = 6,
           },
           {
-            ["active"] = true,
             ["name"] = "type",
-            ["req"] = false,
             ["type"] = "`$STRING`",
-            ["index$"] = 7,
           },
           {
-            ["active"] = true,
             ["name"] = "updated_at",
-            ["req"] = false,
             ["type"] = "`$STRING`",
-            ["index$"] = 8,
           },
           {
-            ["active"] = true,
             ["name"] = "url",
-            ["req"] = false,
             ["type"] = "`$STRING`",
-            ["index$"] = 9,
           },
         },
         ["name"] = "catalog",
@@ -102,49 +75,38 @@ local function make_config()
             ["name"] = "list",
             ["points"] = {
               {
-                ["active"] = true,
                 ["args"] = {
                   ["query"] = {
                     {
-                      ["active"] = true,
                       ["kind"] = "query",
                       ["name"] = "category",
                       ["orig"] = "category",
-                      ["reqd"] = false,
                       ["type"] = "`$STRING`",
                     },
                     {
-                      ["active"] = true,
                       ["example"] = 100,
                       ["kind"] = "query",
                       ["name"] = "limit",
                       ["orig"] = "limit",
-                      ["reqd"] = false,
                       ["type"] = "`$INTEGER`",
                     },
                     {
-                      ["active"] = true,
                       ["example"] = 0,
                       ["kind"] = "query",
                       ["name"] = "offset",
                       ["orig"] = "offset",
-                      ["reqd"] = false,
                       ["type"] = "`$INTEGER`",
                     },
                     {
-                      ["active"] = true,
                       ["kind"] = "query",
                       ["name"] = "search",
                       ["orig"] = "search",
-                      ["reqd"] = false,
                       ["type"] = "`$STRING`",
                     },
                     {
-                      ["active"] = true,
                       ["kind"] = "query",
                       ["name"] = "type",
                       ["orig"] = "type",
-                      ["reqd"] = false,
                       ["type"] = "`$STRING`",
                     },
                   },
@@ -168,10 +130,8 @@ local function make_config()
                   ["req"] = "`reqdata`",
                   ["res"] = "`body.results`",
                 },
-                ["index$"] = 0,
               },
             },
-            ["key$"] = "list",
           },
         },
         ["relations"] = {

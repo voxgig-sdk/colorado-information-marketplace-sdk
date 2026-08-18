@@ -15,7 +15,7 @@ require_relative "../ColoradoInformationMarketplace_sdk"
 module ColoradoInformationMarketplaceFeatureHarness
   # True when this SDK was generated with the named feature.
   def self.has_feature?(name)
-    f = ColoradoInformationMarketplaceConfig.make_config["feature"]
+    f = ColoradoInformationMarketplaceConfig.shared_config["feature"]
     f.is_a?(Hash) && !f[name].nil?
   end
 

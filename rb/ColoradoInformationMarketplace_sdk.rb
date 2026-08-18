@@ -28,7 +28,7 @@ class ColoradoInformationMarketplaceSDK
     utility = ColoradoInformationMarketplaceUtility.new
     @_utility = utility
 
-    config = ColoradoInformationMarketplaceConfig.make_config
+    config = ColoradoInformationMarketplaceConfig.shared_config
 
     @_rootctx = utility.make_context.call({
       "client" => self,
