@@ -28,6 +28,9 @@ def make_config():
     return {
         "main": {
             "name": "ColoradoInformationMarketplace",
+            "slug": "colorado-information-marketplace",
+            "version": "0.0.1",
+            "target": "py",
         },
         "feature": {
             "test": {
@@ -50,42 +53,52 @@ def make_config():
         "fields": [
           {
             "name": "category",
+            "short": "Category of the dataset (e.g., government, transportation, demographics, business)",
             "type": "`$STRING`",
           },
           {
             "name": "created_at",
+            "short": "Timestamp when the dataset was created",
             "type": "`$STRING`",
           },
           {
             "name": "description",
+            "short": "Detailed description of the dataset",
             "type": "`$STRING`",
           },
           {
             "name": "id",
+            "short": "Unique identifier for the dataset",
             "type": "`$STRING`",
           },
           {
             "name": "publisher",
+            "short": "Organization or entity that published the dataset",
             "type": "`$STRING`",
           },
           {
             "name": "tags",
+            "short": "Tags associated with the dataset",
             "type": "`$ARRAY`",
           },
           {
             "name": "title",
+            "short": "Title of the dataset",
             "type": "`$STRING`",
           },
           {
             "name": "type",
+            "short": "Type of resource",
             "type": "`$STRING`",
           },
           {
             "name": "updated_at",
+            "short": "Timestamp when the dataset was last updated",
             "type": "`$STRING`",
           },
           {
             "name": "url",
+            "short": "URL to access the dataset",
             "type": "`$STRING`",
           },
         ],

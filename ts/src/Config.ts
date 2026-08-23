@@ -19,9 +19,20 @@ class Config {
     return fi
   }
 
+  // False for a feature added at runtime via options.extend (station's
+  // adopt path) - the constructor uses this to skip makeFeature for names
+  // no generated class backs.
+  hasFeature(this: any, fn: string) {
+    return null != FEATURE_CLASS[fn]
+  }
+
 
   main = {
     name: 'ColoradoInformationMarketplace',
+        slug: "colorado-information-marketplace",
+    version: "0.0.1",
+    target: "ts",
+
   }
 
 
@@ -56,42 +67,52 @@ class Config {
       "fields": [
         {
           "name": "category",
+          "short": "Category of the dataset (e.g., government, transportation, demographics, business)",
           "type": "`$STRING`"
         },
         {
           "name": "created_at",
+          "short": "Timestamp when the dataset was created",
           "type": "`$STRING`"
         },
         {
           "name": "description",
+          "short": "Detailed description of the dataset",
           "type": "`$STRING`"
         },
         {
           "name": "id",
+          "short": "Unique identifier for the dataset",
           "type": "`$STRING`"
         },
         {
           "name": "publisher",
+          "short": "Organization or entity that published the dataset",
           "type": "`$STRING`"
         },
         {
           "name": "tags",
+          "short": "Tags associated with the dataset",
           "type": "`$ARRAY`"
         },
         {
           "name": "title",
+          "short": "Title of the dataset",
           "type": "`$STRING`"
         },
         {
           "name": "type",
+          "short": "Type of resource",
           "type": "`$STRING`"
         },
         {
           "name": "updated_at",
+          "short": "Timestamp when the dataset was last updated",
           "type": "`$STRING`"
         },
         {
           "name": "url",
+          "short": "URL to access the dataset",
           "type": "`$STRING`"
         }
       ],

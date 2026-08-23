@@ -8,51 +8,61 @@ main: kit: entity: catalog: {
     {
       name: "category"
       req: false
+      short: "Category of the dataset (e.g., government, transportation, demographics, business)"
       type: "`$STRING`"
     }
     {
       name: "created_at"
       req: false
+      short: "Timestamp when the dataset was created"
       type: "`$STRING`"
     }
     {
       name: "description"
       req: false
+      short: "Detailed description of the dataset"
       type: "`$STRING`"
     }
     {
       name: "id"
       req: false
+      short: "Unique identifier for the dataset"
       type: "`$STRING`"
     }
     {
       name: "publisher"
       req: false
+      short: "Organization or entity that published the dataset"
       type: "`$STRING`"
     }
     {
       name: "tags"
       req: false
+      short: "Tags associated with the dataset"
       type: "`$ARRAY`"
     }
     {
       name: "title"
       req: false
+      short: "Title of the dataset"
       type: "`$STRING`"
     }
     {
       name: "type"
       req: false
+      short: "Type of resource"
       type: "`$STRING`"
     }
     {
       name: "updated_at"
       req: false
+      short: "Timestamp when the dataset was last updated"
       type: "`$STRING`"
     }
     {
       name: "url"
       req: false
+      short: "URL to access the dataset"
       type: "`$STRING`"
     }
   ]

@@ -87,16 +87,16 @@ catalog = client.Catalog()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `category` | `str` | No |  |
-| `created_at` | `str` | No |  |
-| `description` | `str` | No |  |
-| `id` | `str` | No |  |
-| `publisher` | `str` | No |  |
-| `tags` | `list` | No |  |
-| `title` | `str` | No |  |
-| `type` | `str` | No |  |
-| `updated_at` | `str` | No |  |
-| `url` | `str` | No |  |
+| `category` | `str` | No | Category of the dataset (e.g., government, transportation, demographics, business) |
+| `created_at` | `str` | No | Timestamp when the dataset was created |
+| `description` | `str` | No | Detailed description of the dataset |
+| `id` | `str` | No | Unique identifier for the dataset |
+| `publisher` | `str` | No | Organization or entity that published the dataset |
+| `tags` | `list` | No | Tags associated with the dataset |
+| `title` | `str` | No | Title of the dataset |
+| `type` | `str` | No | Type of resource |
+| `updated_at` | `str` | No | Timestamp when the dataset was last updated |
+| `url` | `str` | No | URL to access the dataset |
 
 ### Operations
 

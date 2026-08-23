@@ -243,16 +243,16 @@ On error, `ok` is `False` and `err` contains the error value.
 
 | Field | Description |
 | --- | --- |
-| `category` |  |
-| `created_at` |  |
-| `description` |  |
-| `id` |  |
-| `publisher` |  |
-| `tags` |  |
-| `title` |  |
-| `type` |  |
-| `updated_at` |  |
-| `url` |  |
+| `category` | Category of the dataset (e.g., government, transportation, demographics, business) |
+| `created_at` | Timestamp when the dataset was created |
+| `description` | Detailed description of the dataset |
+| `id` | Unique identifier for the dataset |
+| `publisher` | Organization or entity that published the dataset |
+| `tags` | Tags associated with the dataset |
+| `title` | Title of the dataset |
+| `type` | Type of resource |
+| `updated_at` | Timestamp when the dataset was last updated |
+| `url` | URL to access the dataset |
 
 Operations: List.
 
@@ -277,16 +277,16 @@ Create an instance: `catalog = client.Catalog()`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `category` | `str` |  |
-| `created_at` | `str` |  |
-| `description` | `str` |  |
-| `id` | `str` |  |
-| `publisher` | `str` |  |
-| `tags` | `list` |  |
-| `title` | `str` |  |
-| `type` | `str` |  |
-| `updated_at` | `str` |  |
-| `url` | `str` |  |
+| `category` | `str` | Category of the dataset (e.g., government, transportation, demographics, business) |
+| `created_at` | `str` | Timestamp when the dataset was created |
+| `description` | `str` | Detailed description of the dataset |
+| `id` | `str` | Unique identifier for the dataset |
+| `publisher` | `str` | Organization or entity that published the dataset |
+| `tags` | `list` | Tags associated with the dataset |
+| `title` | `str` | Title of the dataset |
+| `type` | `str` | Type of resource |
+| `updated_at` | `str` | Timestamp when the dataset was last updated |
+| `url` | `str` | URL to access the dataset |
 
 #### Example: List
 

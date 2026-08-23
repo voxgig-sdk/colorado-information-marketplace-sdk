@@ -90,16 +90,16 @@ local catalog = client:Catalog(nil)
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `category` | `string` | No |  |
-| `created_at` | `string` | No |  |
-| `description` | `string` | No |  |
-| `id` | `string` | No |  |
-| `publisher` | `string` | No |  |
-| `tags` | `table` | No |  |
-| `title` | `string` | No |  |
-| `type` | `string` | No |  |
-| `updated_at` | `string` | No |  |
-| `url` | `string` | No |  |
+| `category` | `string` | No | Category of the dataset (e.g., government, transportation, demographics, business) |
+| `created_at` | `string` | No | Timestamp when the dataset was created |
+| `description` | `string` | No | Detailed description of the dataset |
+| `id` | `string` | No | Unique identifier for the dataset |
+| `publisher` | `string` | No | Organization or entity that published the dataset |
+| `tags` | `table` | No | Tags associated with the dataset |
+| `title` | `string` | No | Title of the dataset |
+| `type` | `string` | No | Type of resource |
+| `updated_at` | `string` | No | Timestamp when the dataset was last updated |
+| `url` | `string` | No | URL to access the dataset |
 
 ### Operations
 

@@ -231,16 +231,16 @@ Only `direct()` returns a response envelope — a `table` with `ok`,
 
 | Field | Description |
 | --- | --- |
-| `category` |  |
-| `created_at` |  |
-| `description` |  |
-| `id` |  |
-| `publisher` |  |
-| `tags` |  |
-| `title` |  |
-| `type` |  |
-| `updated_at` |  |
-| `url` |  |
+| `category` | Category of the dataset (e.g., government, transportation, demographics, business) |
+| `created_at` | Timestamp when the dataset was created |
+| `description` | Detailed description of the dataset |
+| `id` | Unique identifier for the dataset |
+| `publisher` | Organization or entity that published the dataset |
+| `tags` | Tags associated with the dataset |
+| `title` | Title of the dataset |
+| `type` | Type of resource |
+| `updated_at` | Timestamp when the dataset was last updated |
+| `url` | URL to access the dataset |
 
 Operations: List.
 
@@ -265,16 +265,16 @@ Create an instance: `local catalog = client:Catalog(nil)`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `category` | `string` |  |
-| `created_at` | `string` |  |
-| `description` | `string` |  |
-| `id` | `string` |  |
-| `publisher` | `string` |  |
-| `tags` | `table` |  |
-| `title` | `string` |  |
-| `type` | `string` |  |
-| `updated_at` | `string` |  |
-| `url` | `string` |  |
+| `category` | `string` | Category of the dataset (e.g., government, transportation, demographics, business) |
+| `created_at` | `string` | Timestamp when the dataset was created |
+| `description` | `string` | Detailed description of the dataset |
+| `id` | `string` | Unique identifier for the dataset |
+| `publisher` | `string` | Organization or entity that published the dataset |
+| `tags` | `table` | Tags associated with the dataset |
+| `title` | `string` | Title of the dataset |
+| `type` | `string` | Type of resource |
+| `updated_at` | `string` | Timestamp when the dataset was last updated |
+| `url` | `string` | URL to access the dataset |
 
 #### Example: List
 

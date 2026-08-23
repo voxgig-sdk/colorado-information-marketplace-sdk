@@ -237,16 +237,16 @@ returns a result `Hash` with these keys:
 
 | Field | Description |
 | --- | --- |
-| `category` |  |
-| `created_at` |  |
-| `description` |  |
-| `id` |  |
-| `publisher` |  |
-| `tags` |  |
-| `title` |  |
-| `type` |  |
-| `updated_at` |  |
-| `url` |  |
+| `category` | Category of the dataset (e.g., government, transportation, demographics, business) |
+| `created_at` | Timestamp when the dataset was created |
+| `description` | Detailed description of the dataset |
+| `id` | Unique identifier for the dataset |
+| `publisher` | Organization or entity that published the dataset |
+| `tags` | Tags associated with the dataset |
+| `title` | Title of the dataset |
+| `type` | Type of resource |
+| `updated_at` | Timestamp when the dataset was last updated |
+| `url` | URL to access the dataset |
 
 Operations: List.
 
@@ -271,16 +271,16 @@ Create an instance: `catalog = client.Catalog`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `category` | `String` |  |
-| `created_at` | `String` |  |
-| `description` | `String` |  |
-| `id` | `String` |  |
-| `publisher` | `String` |  |
-| `tags` | `Array` |  |
-| `title` | `String` |  |
-| `type` | `String` |  |
-| `updated_at` | `String` |  |
-| `url` | `String` |  |
+| `category` | `String` | Category of the dataset (e.g., government, transportation, demographics, business) |
+| `created_at` | `String` | Timestamp when the dataset was created |
+| `description` | `String` | Detailed description of the dataset |
+| `id` | `String` | Unique identifier for the dataset |
+| `publisher` | `String` | Organization or entity that published the dataset |
+| `tags` | `Array` | Tags associated with the dataset |
+| `title` | `String` | Title of the dataset |
+| `type` | `String` | Type of resource |
+| `updated_at` | `String` | Timestamp when the dataset was last updated |
+| `url` | `String` | URL to access the dataset |
 
 #### Example: List
 

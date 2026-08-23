@@ -11,6 +11,9 @@ func MakeConfig() map[string]any {
 	return map[string]any{
 		"main": map[string]any{
 			"name": "ColoradoInformationMarketplace",
+			"slug": "colorado-information-marketplace",
+			"version": "0.0.1",
+			"target": "go",
 		},
 		"feature": map[string]any{
 			"test": map[string]any{
@@ -33,42 +36,52 @@ func MakeConfig() map[string]any {
 				"fields": []any{
 					map[string]any{
 						"name": "category",
+						"short": "Category of the dataset (e.g., government, transportation, demographics, business)",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "created_at",
+						"short": "Timestamp when the dataset was created",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "description",
+						"short": "Detailed description of the dataset",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "id",
+						"short": "Unique identifier for the dataset",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "publisher",
+						"short": "Organization or entity that published the dataset",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "tags",
+						"short": "Tags associated with the dataset",
 						"type": "`$ARRAY`",
 					},
 					map[string]any{
 						"name": "title",
+						"short": "Title of the dataset",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "type",
+						"short": "Type of resource",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "updated_at",
+						"short": "Timestamp when the dataset was last updated",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "url",
+						"short": "URL to access the dataset",
 						"type": "`$STRING`",
 					},
 				},
