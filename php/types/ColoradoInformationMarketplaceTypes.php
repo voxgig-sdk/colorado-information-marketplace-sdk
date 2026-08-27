@@ -31,14 +31,9 @@ class Catalog
 class CatalogListMatch
 {
     public ?string $category = null;
-    public ?string $created_at = null;
-    public ?string $description = null;
-    public ?string $id = null;
-    public ?string $publisher = null;
-    public ?array $tags = null;
-    public ?string $title = null;
+    public ?int $limit = null;
+    public ?int $offset = null;
+    public ?string $search = null;
     public ?string $type = null;
-    public ?string $updated_at = null;
-    public ?string $url = null;
 }
 

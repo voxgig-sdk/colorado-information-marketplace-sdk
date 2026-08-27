@@ -58,43 +58,23 @@ Catalog = Struct.new(
 # @!attribute [rw] category
 #   @return [String, nil]
 #
-# @!attribute [rw] created_at
-#   @return [String, nil]
+# @!attribute [rw] limit
+#   @return [Integer, nil]
 #
-# @!attribute [rw] description
-#   @return [String, nil]
+# @!attribute [rw] offset
+#   @return [Integer, nil]
 #
-# @!attribute [rw] id
-#   @return [String, nil]
-#
-# @!attribute [rw] publisher
-#   @return [String, nil]
-#
-# @!attribute [rw] tags
-#   @return [Array, nil]
-#
-# @!attribute [rw] title
+# @!attribute [rw] search
 #   @return [String, nil]
 #
 # @!attribute [rw] type
 #   @return [String, nil]
-#
-# @!attribute [rw] updated_at
-#   @return [String, nil]
-#
-# @!attribute [rw] url
-#   @return [String, nil]
 CatalogListMatch = Struct.new(
   :category,
-  :created_at,
-  :description,
-  :id,
-  :publisher,
-  :tags,
-  :title,
+  :limit,
+  :offset,
+  :search,
   :type,
-  :updated_at,
-  :url,
   keyword_init: true
 )
 

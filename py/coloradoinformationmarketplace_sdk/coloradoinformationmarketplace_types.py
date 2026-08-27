@@ -31,12 +31,7 @@ class Catalog(TypedDict, total=False):
 
 class CatalogListMatch(TypedDict, total=False):
     category: str
-    created_at: str
-    description: str
-    id: str
-    publisher: str
-    tags: list
-    title: str
+    limit: int
+    offset: int
+    search: str
     type: str
-    updated_at: str
-    url: str

@@ -20,15 +20,10 @@
 
 ---@class CatalogListMatch
 ---@field category? string
----@field created_at? string
----@field description? string
----@field id? string
----@field publisher? string
----@field tags? table
----@field title? string
+---@field limit? number
+---@field offset? number
+---@field search? string
 ---@field type? string
----@field updated_at? string
----@field url? string
 
 local M = {}
 

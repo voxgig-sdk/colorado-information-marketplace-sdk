@@ -20,14 +20,9 @@ export interface Catalog {
 
 export interface CatalogListMatch {
   category?: string
-  created_at?: string
-  description?: string
-  id?: string
-  publisher?: string
-  tags?: any[]
-  title?: string
+  limit?: number
+  offset?: number
+  search?: string
   type?: string
-  updated_at?: string
-  url?: string
 }
 
