@@ -49,6 +49,7 @@ module ColoradoInformationMarketplaceConfig
               "type" => "`$STRING`",
             },
             {
+              "format" => "date-time",
               "name" => "created_at",
               "short" => "Timestamp when the dataset was created",
               "type" => "`$STRING`",
@@ -84,16 +85,22 @@ module ColoradoInformationMarketplaceConfig
               "type" => "`$STRING`",
             },
             {
+              "format" => "date-time",
               "name" => "updated_at",
               "short" => "Timestamp when the dataset was last updated",
               "type" => "`$STRING`",
             },
             {
+              "format" => "uri",
               "name" => "url",
               "short" => "URL to access the dataset",
               "type" => "`$STRING`",
             },
           ],
+          "id" => {
+            "field" => "id",
+            "name" => "id",
+          },
           "name" => "catalog",
           "op" => {
             "list" => {
@@ -140,8 +147,10 @@ module ColoradoInformationMarketplaceConfig
                   "kind" => "http",
                   "method" => "GET",
                   "orig" => "/catalog",
-                  "parts" => [
-                    "catalog",
+                  "segments" => [
+                    {
+                      "lit" => "catalog",
+                    },
                   ],
                   "select" => {
                     "exist" => [
@@ -156,6 +165,9 @@ module ColoradoInformationMarketplaceConfig
                     "req" => "`reqdata`",
                     "res" => "`body.results`",
                   },
+                  "parts" => [
+                    "catalog",
+                  ],
                 },
               ],
             },

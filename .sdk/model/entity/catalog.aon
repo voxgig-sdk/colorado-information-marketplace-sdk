@@ -12,6 +12,7 @@ main: kit: entity: catalog: {
       type: "`$STRING`"
     }
     {
+      format: "date-time"
       name: "created_at"
       req: false
       short: "Timestamp when the dataset was created"
@@ -54,12 +55,14 @@ main: kit: entity: catalog: {
       type: "`$STRING`"
     }
     {
+      format: "date-time"
       name: "updated_at"
       req: false
       short: "Timestamp when the dataset was last updated"
       type: "`$STRING`"
     }
     {
+      format: "uri"
       name: "url"
       req: false
       short: "URL to access the dataset"
@@ -121,8 +124,10 @@ main: kit: entity: catalog: {
           }
           method: "GET"
           orig: "/catalog"
-          parts: [
-            "catalog"
+          segments: [
+            {
+              lit: "catalog"
+            }
           ]
           select: {
             exist: [

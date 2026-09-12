@@ -41,6 +41,7 @@ func MakeConfig() map[string]any {
 						"type": "`$STRING`",
 					},
 					map[string]any{
+						"format": "date-time",
 						"name": "created_at",
 						"short": "Timestamp when the dataset was created",
 						"type": "`$STRING`",
@@ -76,15 +77,21 @@ func MakeConfig() map[string]any {
 						"type": "`$STRING`",
 					},
 					map[string]any{
+						"format": "date-time",
 						"name": "updated_at",
 						"short": "Timestamp when the dataset was last updated",
 						"type": "`$STRING`",
 					},
 					map[string]any{
+						"format": "uri",
 						"name": "url",
 						"short": "URL to access the dataset",
 						"type": "`$STRING`",
 					},
+				},
+				"id": map[string]any{
+					"field": "id",
+					"name": "id",
 				},
 				"name": "catalog",
 				"op": map[string]any{
@@ -132,8 +139,10 @@ func MakeConfig() map[string]any {
 								"kind": "http",
 								"method": "GET",
 								"orig": "/catalog",
-								"parts": []any{
-									"catalog",
+								"segments": []any{
+									map[string]any{
+										"lit": "catalog",
+									},
 								},
 								"select": map[string]any{
 									"exist": []any{
@@ -148,6 +157,9 @@ func MakeConfig() map[string]any {
 									"req": "`reqdata`",
 									"res": "`body.results`",
 								},
+								"parts": []any{
+									"catalog",
+								},
 							},
 						},
 					},
@@ -158,6 +170,17 @@ func MakeConfig() map[string]any {
 			},
 		},
 	}
+}
+
+// The plugin definitions the model selected per feature, as []any so a
+// feature package can consume them without core naming its types. Empty
+// when no active feature declares active plugin groups for this target.
+var featurePlugins = map[string][]any{
+}
+
+// FeaturePlugins is the definitions list for one feature's chain.
+func FeaturePlugins(name string) []any {
+	return featurePlugins[name]
 }
 
 var (
