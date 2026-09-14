@@ -28,7 +28,7 @@ loading a specific record.
 ### 1. Create a client
 
 ```ts
-import { ColoradoInformationMarketplaceSDK } from '@voxgig-sdk/colorado-information-marketplace'
+import { ColoradoInformationMarketplaceSDK } from '@voxgig-sdk/colorado-information-marketplace-sdk'
 
 const client = new ColoradoInformationMarketplaceSDK()
 ```
@@ -421,7 +421,7 @@ colorado-information-marketplace/
 Import the SDK from the package root:
 
 ```ts
-import { ColoradoInformationMarketplaceSDK } from '@voxgig-sdk/colorado-information-marketplace'
+import { ColoradoInformationMarketplaceSDK } from '@voxgig-sdk/colorado-information-marketplace-sdk'
 ```
 
 ### Entity state

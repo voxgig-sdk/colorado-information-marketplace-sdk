@@ -105,7 +105,7 @@ local results, err = client:Catalog():list()
 
 | Language | Package | Install |
 | --- | --- | --- |
-| TypeScript | `@voxgig-sdk/colorado-information-marketplace` | publish pending — [install from git tag](https://github.com/voxgig-sdk/colorado-information-marketplace-sdk/releases) |
+| TypeScript | `@voxgig-sdk/colorado-information-marketplace-sdk` | publish pending — [install from git tag](https://github.com/voxgig-sdk/colorado-information-marketplace-sdk/releases) |
 | Python | `voxgig-sdk-colorado-information-marketplace` | publish pending — [install from git tag](https://github.com/voxgig-sdk/colorado-information-marketplace-sdk/releases) |
 | PHP | `voxgig-sdk/colorado-information-marketplace` | publish pending — [install from git tag](https://github.com/voxgig-sdk/colorado-information-marketplace-sdk/releases) |
 | Golang | `github.com/voxgig-sdk/colorado-information-marketplace-sdk/go` | `go get github.com/voxgig-sdk/colorado-information-marketplace-sdk/go@latest` |
@@ -119,7 +119,7 @@ local results, err = client:Catalog():list()
 ### TypeScript
 
 ```ts
-import { ColoradoInformationMarketplaceSDK } from '@voxgig-sdk/colorado-information-marketplace'
+import { ColoradoInformationMarketplaceSDK } from '@voxgig-sdk/colorado-information-marketplace-sdk'
 
 const client = new ColoradoInformationMarketplaceSDK()
 
